@@ -1,0 +1,51 @@
+dir,catid,subject,style_ok,style_errors,path_hash,sem_match,source_icon
+output/test/blue,1005,Clothing,False,missing/incorrect stroke,93eeead76f719907,UNKNOWN,generated
+output/test/blue,1002,Furniture,False,missing/incorrect stroke,5e096ab25eb43dee,UNKNOWN,generated
+output/test/blue,1009,Garden,False,missing/incorrect stroke,27cf40473dcf2586,UNKNOWN,generated
+output/test/blue,1007,Beauty,False,missing/incorrect stroke,3845259b50e7a45a,UNKNOWN,generated
+output/test/blue,1003,Toys,False,missing/incorrect stroke,1f0a2b11b34a4456,UNKNOWN,generated
+output/test/blue,1001,Electronics,False,missing/incorrect stroke,19de665dd996a0fe,UNKNOWN,generated
+output/test/blue,1008,Automotive,False,missing/incorrect stroke,3aff8a85c7426d31,UNKNOWN,generated
+output/test/blue,1010,Kitchen,False,missing/incorrect stroke,658e37501f3c09b7,UNKNOWN,generated
+output/test/blue,1006,Sports,False,missing/incorrect stroke,5f56720af64f690c,UNKNOWN,generated
+output/test/blue,1004,Books,False,missing/incorrect stroke,2fdbac09b3917fc5,UNKNOWN,generated
+output/test/classic,1005,Clothing,True,,dd03786f987883f7,UNKNOWN,generated
+output/test/classic,1002,Furniture,True,,50ca284cb184a63c,UNKNOWN,generated
+output/test/classic,1009,Garden,True,,3769dab86352f8bc,UNKNOWN,generated
+output/test/classic,1007,Beauty,True,,c6debaf8950881df,UNKNOWN,generated
+output/test/classic,1003,Toys,True,,db1bfc6b05a606b3,UNKNOWN,generated
+output/test/classic,1001,Electronics,True,,3642f59919353707,UNKNOWN,generated
+output/test/classic,1008,Automotive,True,,31ffffb9757e49e0,UNKNOWN,generated
+output/test/classic,1010,Kitchen,True,,ed6d117a29829600,UNKNOWN,generated
+output/test/classic,1006,Sports,True,,2db48bbaab4fca37,UNKNOWN,generated
+output/test/classic,1004,Books,True,,5dea5c0b0b4c8a82,UNKNOWN,generated
+output/test/mono,1005,Clothing,False,missing/incorrect stroke,9307fa5d8e846e5a,UNKNOWN,generated
+output/test/mono,1002,Furniture,False,missing/incorrect stroke,2890ee57b01b5062,UNKNOWN,generated
+output/test/mono,1009,Garden,False,missing/incorrect stroke,fb2d5a59ed170282,UNKNOWN,generated
+output/test/mono,1007,Beauty,False,missing/incorrect stroke,8892fe7bb33a4dd9,UNKNOWN,generated
+output/test/mono,1003,Toys,False,missing/incorrect stroke,35fc9955c8106f3a,UNKNOWN,generated
+output/test/mono,1001,Electronics,False,missing/incorrect stroke,d7b67036cf3893f5,UNKNOWN,generated
+output/test/mono,1008,Automotive,False,missing/incorrect stroke,a1908695dec179eb,UNKNOWN,generated
+output/test/mono,1010,Kitchen,False,missing/incorrect stroke,e74ff3a3e57575d7,UNKNOWN,generated
+output/test/mono,1006,Sports,False,missing/incorrect stroke,598a1f4365cc9371,UNKNOWN,generated
+output/test/mono,1004,Books,False,missing/incorrect stroke,2863ef883e08b786,UNKNOWN,generated
+output/test/thick,1005,Clothing,False,missing/incorrect stroke-width,f92d8e403e60197f,UNKNOWN,generated
+output/test/thick,1002,Furniture,False,missing/incorrect stroke-width,098e84899966a636,UNKNOWN,generated
+output/test/thick,1009,Garden,False,missing/incorrect stroke-width,2b69b0430005054e,UNKNOWN,generated
+output/test/thick,1007,Beauty,False,missing/incorrect stroke-width,723fe17bf5f8527a,UNKNOWN,generated
+output/test/thick,1003,Toys,False,missing/incorrect stroke-width,9915ae2375a576da,UNKNOWN,generated
+output/test/thick,1001,Electronics,False,missing/incorrect stroke-width,bf2f3015f589bbf1,UNKNOWN,generated
+output/test/thick,1008,Automotive,False,missing/incorrect stroke-width,04a1ea913c4af1d4,UNKNOWN,generated
+output/test/thick,1010,Kitchen,False,missing/incorrect stroke-width,2860f8c78c209273,UNKNOWN,generated
+output/test/thick,1006,Sports,False,missing/incorrect stroke-width,f9c03613d69a7d76,UNKNOWN,generated
+output/test/thick,1004,Books,False,missing/incorrect stroke-width,35946e3f1d106e75,UNKNOWN,generated
+output/test/thin,1005,Clothing,False,missing/incorrect stroke-width,0586e83fbfcffd1d,UNKNOWN,generated
+output/test/thin,1002,Furniture,False,missing/incorrect stroke-width,a41fa2a6cb3bae15,UNKNOWN,generated
+output/test/thin,1009,Garden,False,missing/incorrect stroke-width,72dfdd09f52363ca,UNKNOWN,generated
+output/test/thin,1007,Beauty,False,missing/incorrect stroke-width,8f46c0e72533375a,UNKNOWN,generated
+output/test/thin,1003,Toys,False,missing/incorrect stroke-width,1fb62d12ae6245d6,UNKNOWN,generated
+output/test/thin,1001,Electronics,False,missing/incorrect stroke-width,18b52434946abf1f,UNKNOWN,generated
+output/test/thin,1008,Automotive,False,missing/incorrect stroke-width,f8ab88928bf5d218,UNKNOWN,generated
+output/test/thin,1010,Kitchen,False,missing/incorrect stroke-width,a9add04917a680c9,UNKNOWN,generated
+output/test/thin,1006,Sports,False,missing/incorrect stroke-width,1b87686b1d6a41c9,UNKNOWN,generated
+output/test/thin,1004,Books,False,missing/incorrect stroke-width,289c8832260b86ce,UNKNOWN,generated

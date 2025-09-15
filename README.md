@@ -122,6 +122,13 @@ To validate the output, run:
 python scripts/verify_icons.py output/test
 ```
 
+For a consolidated CSV report including basic semantic hints and duplicate
+geometry detection, run:
+
+```
+python scripts/validate_outputs.py output/test output/test2
+```
+
 ---
 
 ## Sanity Checklist
