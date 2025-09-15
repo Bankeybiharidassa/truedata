@@ -43,8 +43,10 @@ See [style.md](style.md) for the site's color palette and typography. Icons use 
 
 ## SVGrepo Integration
 
-1. **Query Selection**  
-   - For each row, use the lowest non-empty category field as search query on [svgrepo.com](https://www.svgrepo.com).  
+For notes on using the SVGrepo API as a drop-in replacement for earlier svgapi.com experiments, see [svgrepo_com_research.md](svgrepo_com_research.md).
+
+1. **Query Selection**
+   - For each row, use the lowest non-empty category field as search query on [svgrepo.com](https://www.svgrepo.com).
 
 2. **Icon Choice**  
    - Select the clearest, simplest icon (paths/lines/circles only).  
