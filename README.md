@@ -94,7 +94,7 @@ Catid, Root category, Sub category, Sub-sub category, Sub-sub-sub category, Sub-
 ## Output
 
 - For each CSV:  
-- One `.zip` containing all `{Catid}.svg` + `manifest.csv`.  
+- One directory "output" containing all `{Catid}.svg` + `manifest.csv`.  
 - No extra text, no JSON.
 
 ---
