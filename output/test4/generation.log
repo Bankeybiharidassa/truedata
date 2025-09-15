@@ -1,0 +1,147 @@
+2025-09-15 17:58:40,862 [INFO] Logging initialised at output/test4/generation.log
+2025-09-15 17:58:40,862 [INFO] Reading categories from categories_25.csv
+2025-09-15 17:58:40,863 [INFO] Writing logs to output/test4/generation.log
+2025-09-15 17:58:40,863 [INFO] Generating icons for 25 categories (classic)
+2025-09-15 17:58:41,432 [INFO] [svgapi] no icons found for 'Baby & kind' (query 'kind baby')
+2025-09-15 17:58:41,898 [INFO] [svgapi] no icons found for 'Baby & kind' (query 'kind')
+2025-09-15 17:58:42,545 [INFO] [svgapi] no icons found for 'Baby & kind' (query 'baby   kind')
+2025-09-15 17:58:43,171 [INFO] [svgapi] no icons found for 'Baby & kind' (query 'Baby & kind')
+2025-09-15 17:58:43,732 [INFO] [svgapi] no icons found for 'Baby & kind' (query 'baby care')
+2025-09-15 17:58:44,291 [INFO] [svgapi] no icons found for 'Baby & kind' (query 'baby icon')
+2025-09-15 17:58:45,003 [INFO] [svgapi] using 'Baby' for 'Baby & kind' via query 'baby'
+2025-09-15 17:58:45,680 [INFO] [svgapi] no icons found for 'Activiteitsbenodigdheden voor baby's' (query 'baby voor activiteitsbenodigdheden s')
+2025-09-15 17:58:46,155 [INFO] [svgapi] no icons found for 'Activiteitsbenodigdheden voor baby's' (query 'baby voor activiteitsbenodigdheden')
+2025-09-15 17:58:46,734 [INFO] [svgapi] no icons found for 'Activiteitsbenodigdheden voor baby's' (query 'baby voor')
+2025-09-15 17:58:47,211 [INFO] [svgapi] using 'Baby' for 'Activiteitsbenodigdheden voor baby's' via query 'baby'
+2025-09-15 17:58:47,722 [INFO] [svgapi] no icons found for 'Accessoires voor babymobiels' (query 'babymobiel voor babymobiels accessoires')
+2025-09-15 17:58:48,141 [INFO] [svgapi] no icons found for 'Accessoires voor babymobiels' (query 'babymobiel voor babymobiels')
+2025-09-15 17:58:48,614 [INFO] [svgapi] no icons found for 'Accessoires voor babymobiels' (query 'babymobiel voor')
+2025-09-15 17:58:49,281 [INFO] [svgapi] no icons found for 'Accessoires voor babymobiels' (query 'babymobiel')
+2025-09-15 17:58:50,047 [INFO] [svgapi] no icons found for 'Accessoires voor babymobiels' (query 'accessoires voor babymobiels')
+2025-09-15 17:58:50,504 [INFO] [svgapi] no icons found for 'Accessoires voor babymobiels' (query 'Accessoires voor babymobiels')
+2025-09-15 17:58:51,117 [INFO] [svgapi] no icons found for 'Accessoires voor babymobiels' (query 'baby care')
+2025-09-15 17:58:51,676 [INFO] [svgapi] no icons found for 'Accessoires voor babymobiels' (query 'baby icon')
+2025-09-15 17:58:52,210 [INFO] [svgapi] using 'Baby' for 'Accessoires voor babymobiels' via query 'baby'
+2025-09-15 17:58:52,686 [INFO] [svgapi] no icons found for 'Accessoires voor babyschommelstoelen & wipstoelen' (query 'wipstoelen babyschommelstoelen voor accessoires')
+2025-09-15 17:58:53,071 [INFO] [svgapi] no icons found for 'Accessoires voor babyschommelstoelen & wipstoelen' (query 'wipstoelen babyschommelstoelen voor')
+2025-09-15 17:58:53,578 [INFO] [svgapi] no icons found for 'Accessoires voor babyschommelstoelen & wipstoelen' (query 'wipstoelen babyschommelstoelen')
+2025-09-15 17:58:54,006 [INFO] [svgapi] no icons found for 'Accessoires voor babyschommelstoelen & wipstoelen' (query 'wipstoelen')
+2025-09-15 17:58:54,470 [INFO] [svgapi] no icons found for 'Accessoires voor babyschommelstoelen & wipstoelen' (query 'accessoires voor babyschommelstoelen   wipstoelen')
+2025-09-15 17:58:55,176 [INFO] [svgapi] no icons found for 'Accessoires voor babyschommelstoelen & wipstoelen' (query 'Accessoires voor babyschommelstoelen & wipstoelen')
+2025-09-15 17:58:55,697 [INFO] [svgapi] no icons found for 'Accessoires voor babyschommelstoelen & wipstoelen' (query 'baby care')
+2025-09-15 17:58:56,218 [INFO] [svgapi] no icons found for 'Accessoires voor babyschommelstoelen & wipstoelen' (query 'baby icon')
+2025-09-15 17:58:56,634 [INFO] [svgapi] using 'Baby' for 'Accessoires voor babyschommelstoelen & wipstoelen' via query 'baby'
+2025-09-15 17:58:57,118 [INFO] [svgapi] no icons found for 'Attributen voor babymijlpalen' (query 'babymijlpalen voor attributen')
+2025-09-15 17:58:57,524 [INFO] [svgapi] no icons found for 'Attributen voor babymijlpalen' (query 'babymijlpalen voor')
+2025-09-15 17:58:57,940 [INFO] [svgapi] no icons found for 'Attributen voor babymijlpalen' (query 'babymijlpalen')
+2025-09-15 17:58:58,304 [INFO] [svgapi] no icons found for 'Attributen voor babymijlpalen' (query 'attributen voor babymijlpalen')
+2025-09-15 17:58:58,684 [INFO] [svgapi] no icons found for 'Attributen voor babymijlpalen' (query 'Attributen voor babymijlpalen')
+2025-09-15 17:58:59,072 [INFO] [svgapi] no icons found for 'Attributen voor babymijlpalen' (query 'baby care')
+2025-09-15 17:58:59,413 [INFO] [svgapi] no icons found for 'Attributen voor babymijlpalen' (query 'baby icon')
+2025-09-15 17:58:59,825 [INFO] [svgapi] using 'Baby' for 'Attributen voor babymijlpalen' via query 'baby'
+2025-09-15 17:59:00,195 [INFO] [svgapi] no icons found for 'Babyjumpers' (query 'babyjumper')
+2025-09-15 17:59:00,589 [INFO] [svgapi] no icons found for 'Babyjumpers' (query 'babyjumpers')
+2025-09-15 17:59:00,976 [INFO] [svgapi] no icons found for 'Babyjumpers' (query 'Babyjumpers')
+2025-09-15 17:59:01,427 [INFO] [svgapi] no icons found for 'Babyjumpers' (query 'baby care')
+2025-09-15 17:59:01,868 [INFO] [svgapi] no icons found for 'Babyjumpers' (query 'baby icon')
+2025-09-15 17:59:02,354 [INFO] [svgapi] using 'Baby' for 'Babyjumpers' via query 'baby'
+2025-09-15 17:59:02,838 [INFO] [svgapi] no icons found for 'Babyloopstoelen' (query 'babyloopstoelen')
+2025-09-15 17:59:03,267 [INFO] [svgapi] no icons found for 'Babyloopstoelen' (query 'Babyloopstoelen')
+2025-09-15 17:59:03,619 [INFO] [svgapi] no icons found for 'Babyloopstoelen' (query 'baby care')
+2025-09-15 17:59:04,034 [INFO] [svgapi] no icons found for 'Babyloopstoelen' (query 'baby icon')
+2025-09-15 17:59:04,529 [INFO] [svgapi] using 'Baby' for 'Babyloopstoelen' via query 'baby'
+2025-09-15 17:59:04,905 [INFO] [svgapi] no icons found for 'Babymobilen' (query 'babymobilen')
+2025-09-15 17:59:05,349 [INFO] [svgapi] no icons found for 'Babymobilen' (query 'Babymobilen')
+2025-09-15 17:59:05,866 [INFO] [svgapi] no icons found for 'Babymobilen' (query 'baby care')
+2025-09-15 17:59:06,636 [INFO] [svgapi] no icons found for 'Babymobilen' (query 'baby icon')
+2025-09-15 17:59:07,430 [INFO] [svgapi] using 'Baby' for 'Babymobilen' via query 'baby'
+2025-09-15 17:59:08,161 [INFO] [svgapi] no icons found for 'Babyschommelstoelen' (query 'babyschommelstoelen')
+2025-09-15 17:59:08,800 [INFO] [svgapi] no icons found for 'Babyschommelstoelen' (query 'Babyschommelstoelen')
+2025-09-15 17:59:09,326 [INFO] [svgapi] no icons found for 'Babyschommelstoelen' (query 'baby care')
+2025-09-15 17:59:09,739 [INFO] [svgapi] no icons found for 'Babyschommelstoelen' (query 'baby icon')
+2025-09-15 17:59:10,240 [INFO] [svgapi] using 'Baby' for 'Babyschommelstoelen' via query 'baby'
+2025-09-15 17:59:10,936 [INFO] [svgapi] no icons found for 'Babyspeelrekken en -matten' (query 'matten en babyspeelrekken')
+2025-09-15 17:59:11,620 [INFO] [svgapi] no icons found for 'Babyspeelrekken en -matten' (query 'matten en')
+2025-09-15 17:59:12,174 [INFO] [svgapi] no icons found for 'Babyspeelrekken en -matten' (query 'matten')
+2025-09-15 17:59:12,670 [INFO] [svgapi] no icons found for 'Babyspeelrekken en -matten' (query 'babyspeelrekken en  matten')
+2025-09-15 17:59:13,216 [INFO] [svgapi] no icons found for 'Babyspeelrekken en -matten' (query 'Babyspeelrekken en -matten')
+2025-09-15 17:59:13,904 [INFO] [svgapi] no icons found for 'Babyspeelrekken en -matten' (query 'baby care')
+2025-09-15 17:59:14,408 [INFO] [svgapi] no icons found for 'Babyspeelrekken en -matten' (query 'baby icon')
+2025-09-15 17:59:14,847 [INFO] [svgapi] using 'Baby' for 'Babyspeelrekken en -matten' via query 'baby'
+2025-09-15 17:59:15,187 [INFO] [svgapi] no icons found for 'Babyswings' (query 'babyswings')
+2025-09-15 17:59:15,712 [INFO] [svgapi] no icons found for 'Babyswings' (query 'Babyswings')
+2025-09-15 17:59:16,321 [INFO] [svgapi] no icons found for 'Babyswings' (query 'baby care')
+2025-09-15 17:59:16,942 [INFO] [svgapi] no icons found for 'Babyswings' (query 'baby icon')
+2025-09-15 17:59:17,443 [INFO] [svgapi] using 'Baby' for 'Babyswings' via query 'baby'
+2025-09-15 17:59:17,822 [INFO] [svgapi] no icons found for 'Box accessoires' (query 'box accessoires')
+2025-09-15 17:59:18,284 [INFO] [svgapi] using 'Box' for 'Box accessoires' via query 'box'
+2025-09-15 17:59:18,687 [INFO] [svgapi] no icons found for 'Hangend babyspeelgoed' (query 'babyspeelgoed hangend')
+2025-09-15 17:59:18,989 [INFO] [svgapi] no icons found for 'Hangend babyspeelgoed' (query 'babyspeelgoed')
+2025-09-15 17:59:19,315 [INFO] [svgapi] no icons found for 'Hangend babyspeelgoed' (query 'hangend babyspeelgoed')
+2025-09-15 17:59:19,684 [INFO] [svgapi] no icons found for 'Hangend babyspeelgoed' (query 'Hangend babyspeelgoed')
+2025-09-15 17:59:20,000 [INFO] [svgapi] no icons found for 'Hangend babyspeelgoed' (query 'baby care')
+2025-09-15 17:59:20,336 [INFO] [svgapi] no icons found for 'Hangend babyspeelgoed' (query 'baby icon')
+2025-09-15 17:59:20,767 [INFO] [svgapi] using 'Baby' for 'Hangend babyspeelgoed' via query 'baby'
+2025-09-15 17:59:21,151 [INFO] [svgapi] no icons found for 'Kindermeetlatten' (query 'kindermeetlatten')
+2025-09-15 17:59:21,514 [INFO] [svgapi] no icons found for 'Kindermeetlatten' (query 'Kindermeetlatten')
+2025-09-15 17:59:21,903 [INFO] [svgapi] no icons found for 'Kindermeetlatten' (query 'child icon')
+2025-09-15 17:59:22,225 [INFO] [svgapi] no icons found for 'Kindermeetlatten' (query 'children toys')
+2025-09-15 17:59:22,545 [INFO] [svgapi] no icons found for 'Kindermeetlatten' (query 'baby icon')
+2025-09-15 17:59:23,014 [INFO] [svgapi] using 'Baby' for 'Kindermeetlatten' via query 'baby'
+2025-09-15 17:59:23,277 [INFO] [svgapi] no icons found for 'Playpennen' (query 'playpennen')
+2025-09-15 17:59:23,585 [INFO] [svgapi] no icons found for 'Playpennen' (query 'Playpennen')
+2025-09-15 17:59:23,994 [INFO] [svgapi] no icons found for 'Playpennen' (query 'baby icon')
+2025-09-15 17:59:24,538 [INFO] [svgapi] using 'Baby' for 'Playpennen' via query 'baby'
+2025-09-15 17:59:25,202 [INFO] [svgapi] no icons found for 'Rammelaars' (query 'rammelaars')
+2025-09-15 17:59:25,593 [INFO] [svgapi] no icons found for 'Rammelaars' (query 'Rammelaars')
+2025-09-15 17:59:26,103 [INFO] [svgapi] no icons found for 'Rammelaars' (query 'baby icon')
+2025-09-15 17:59:26,612 [INFO] [svgapi] using 'Baby' for 'Rammelaars' via query 'baby'
+2025-09-15 17:59:26,985 [INFO] [svgapi] no icons found for 'Wipstoeltjes' (query 'wipstoeltjes')
+2025-09-15 17:59:27,501 [INFO] [svgapi] no icons found for 'Wipstoeltjes' (query 'Wipstoeltjes')
+2025-09-15 17:59:27,831 [INFO] [svgapi] no icons found for 'Wipstoeltjes' (query 'baby icon')
+2025-09-15 17:59:28,277 [INFO] [svgapi] using 'Baby' for 'Wipstoeltjes' via query 'baby'
+2025-09-15 17:59:28,666 [INFO] [svgapi] no icons found for 'Baby cadeausets' (query 'baby cadeausets')
+2025-09-15 17:59:29,227 [INFO] [svgapi] using 'Baby' for 'Baby cadeausets' via query 'baby'
+2025-09-15 17:59:29,775 [INFO] [svgapi] no icons found for 'Babybadjes & -potjes' (query 'babybadjes potjes')
+2025-09-15 17:59:30,175 [INFO] [svgapi] no icons found for 'Babybadjes & -potjes' (query 'babybadjes')
+2025-09-15 17:59:30,663 [INFO] [svgapi] no icons found for 'Babybadjes & -potjes' (query 'babybadjes    potjes')
+2025-09-15 17:59:31,310 [INFO] [svgapi] no icons found for 'Babybadjes & -potjes' (query 'Babybadjes & -potjes')
+2025-09-15 17:59:31,746 [INFO] [svgapi] no icons found for 'Babybadjes & -potjes' (query 'baby care')
+2025-09-15 17:59:32,165 [INFO] [svgapi] no icons found for 'Babybadjes & -potjes' (query 'baby icon')
+2025-09-15 17:59:32,642 [INFO] [svgapi] using 'Baby' for 'Babybadjes & -potjes' via query 'baby'
+2025-09-15 17:59:33,147 [INFO] [svgapi] no icons found for 'Accessoires voor neuszuigers voor baby's' (query 'baby voor neuszuiger accessoires neuszuigers s')
+2025-09-15 17:59:33,708 [INFO] [svgapi] no icons found for 'Accessoires voor neuszuigers voor baby's' (query 'baby voor neuszuiger accessoires neuszuigers')
+2025-09-15 17:59:34,140 [INFO] [svgapi] no icons found for 'Accessoires voor neuszuigers voor baby's' (query 'baby voor neuszuiger accessoires')
+2025-09-15 17:59:34,461 [INFO] [svgapi] no icons found for 'Accessoires voor neuszuigers voor baby's' (query 'baby voor neuszuiger')
+2025-09-15 17:59:34,833 [INFO] [svgapi] no icons found for 'Accessoires voor neuszuigers voor baby's' (query 'baby voor')
+2025-09-15 17:59:35,280 [INFO] [svgapi] using 'Baby' for 'Accessoires voor neuszuigers voor baby's' via query 'baby'
+2025-09-15 17:59:35,529 [INFO] [svgapi] no icons found for 'Baby-huidverzorgingsproducten' (query 'huidverzorgingsproducten baby')
+2025-09-15 17:59:35,854 [INFO] [svgapi] no icons found for 'Baby-huidverzorgingsproducten' (query 'huidverzorgingsproducten')
+2025-09-15 17:59:36,192 [INFO] [svgapi] no icons found for 'Baby-huidverzorgingsproducten' (query 'baby huidverzorgingsproducten')
+2025-09-15 17:59:36,514 [INFO] [svgapi] no icons found for 'Baby-huidverzorgingsproducten' (query 'Baby-huidverzorgingsproducten')
+2025-09-15 17:59:36,820 [INFO] [svgapi] no icons found for 'Baby-huidverzorgingsproducten' (query 'baby care')
+2025-09-15 17:59:37,102 [INFO] [svgapi] no icons found for 'Baby-huidverzorgingsproducten' (query 'baby icon')
+2025-09-15 17:59:37,463 [INFO] [svgapi] using 'Baby' for 'Baby-huidverzorgingsproducten' via query 'baby'
+2025-09-15 17:59:37,819 [INFO] [svgapi] no icons found for 'Babybubbelbaden' (query 'babybubbelbaden')
+2025-09-15 17:59:38,179 [INFO] [svgapi] no icons found for 'Babybubbelbaden' (query 'Babybubbelbaden')
+2025-09-15 17:59:38,529 [INFO] [svgapi] no icons found for 'Babybubbelbaden' (query 'baby care')
+2025-09-15 17:59:38,872 [INFO] [svgapi] no icons found for 'Babybubbelbaden' (query 'baby icon')
+2025-09-15 17:59:39,314 [INFO] [svgapi] using 'Baby' for 'Babybubbelbaden' via query 'baby'
+2025-09-15 17:59:39,704 [INFO] [svgapi] no icons found for 'Babyzeep' (query 'babyzeep')
+2025-09-15 17:59:40,138 [INFO] [svgapi] no icons found for 'Babyzeep' (query 'Babyzeep')
+2025-09-15 17:59:40,528 [INFO] [svgapi] no icons found for 'Babyzeep' (query 'baby care')
+2025-09-15 17:59:40,932 [INFO] [svgapi] no icons found for 'Babyzeep' (query 'baby icon')
+2025-09-15 17:59:41,420 [INFO] [svgapi] using 'Baby' for 'Babyzeep' via query 'baby'
+2025-09-15 17:59:41,844 [INFO] [svgapi] no icons found for 'Badsets en huidverzorgingssets voor baby's' (query 'baby voor en huidverzorgingssets badsets s')
+2025-09-15 17:59:42,256 [INFO] [svgapi] no icons found for 'Badsets en huidverzorgingssets voor baby's' (query 'baby voor en huidverzorgingssets badsets')
+2025-09-15 17:59:42,660 [INFO] [svgapi] no icons found for 'Badsets en huidverzorgingssets voor baby's' (query 'baby voor en huidverzorgingssets')
+2025-09-15 17:59:43,273 [INFO] [svgapi] no icons found for 'Badsets en huidverzorgingssets voor baby's' (query 'baby voor en')
+2025-09-15 17:59:43,961 [INFO] [svgapi] no icons found for 'Badsets en huidverzorgingssets voor baby's' (query 'baby voor')
+2025-09-15 17:59:44,779 [INFO] [svgapi] using 'Baby' for 'Badsets en huidverzorgingssets voor baby's' via query 'baby'
+2025-09-15 17:59:45,437 [INFO] [svgapi] no icons found for 'Bodylotions en -melk voor baby's' (query 'baby voor melk en bodylotions s')
+2025-09-15 17:59:46,087 [INFO] [svgapi] no icons found for 'Bodylotions en -melk voor baby's' (query 'baby voor melk en bodylotions')
+2025-09-15 17:59:46,581 [INFO] [svgapi] no icons found for 'Bodylotions en -melk voor baby's' (query 'baby voor melk en')
+2025-09-15 17:59:46,994 [INFO] [svgapi] no icons found for 'Bodylotions en -melk voor baby's' (query 'baby voor melk')
+2025-09-15 17:59:47,365 [INFO] [svgapi] no icons found for 'Bodylotions en -melk voor baby's' (query 'baby voor')
+2025-09-15 17:59:47,881 [INFO] [svgapi] using 'Baby' for 'Bodylotions en -melk voor baby's' via query 'baby'
+2025-09-15 17:59:47,883 [INFO] Wrote output/test4/classic/manifest.csv

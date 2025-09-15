@@ -61,5 +61,5 @@ Sample response:
 - Both services return direct SVG links suitable for deterministic restyling.
 
 ## Access Notes
-Attempts to reach svgrepo.com from this environment result in `403 Forbidden`, including through the recommended `r.jina.ai` proxy. A different proxy or credentials may be necessary before automating downloads.
+Attempts to reach svgrepo.com from this environment result in `403 Forbidden`, including through the recommended `r.jina.ai` proxy. A fresh test after svgapi integration (see `connection-prohibited.md`) still returns `403`, so automation remains blocked until alternate access is arranged.
 
