@@ -21,3 +21,4 @@
 
 ## Items Needing Clarification
 - Confirm whether an external storage solution (e.g., Google Drive) is required if repository artifacts approach GitHub's 100 MiB file limit.
+- Direct `curl` requests to svgrepo.com and the `r.jina.ai` proxy return `403 Forbidden`; do we need an approved proxy or API credentials?
