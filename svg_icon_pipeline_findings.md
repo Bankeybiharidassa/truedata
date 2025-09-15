@@ -23,6 +23,7 @@ The current pipeline **behaves as if the SVGrepo lookup is disabled or never cal
 - Many icons do **not reflect** their category subject.
 - `manifest.csv` frequently contains `generated` or empty `source_icon` → suggests **SVGrepo lookup is not producing usable hits** or is **never executed**.
 - Validation passes because checks are mainly **syntactic/style-based** (viewBox, strokes, forbidden elements), not semantic.
+- Recent testing of the Iconify-based fallback showed network calls can hang until manually interrupted, indicating unstable access to public icon sources.
 
 ---
 
