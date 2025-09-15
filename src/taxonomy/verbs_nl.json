@@ -1,5 +1,16 @@
 {
   "boren": {"lemma": "boren", "nouns": ["boor", "kolomboor", "accuboormachine"], "synonyms": ["gat", "boring"]},
   "schroeven": {"lemma": "schroeven", "nouns": ["schroef", "bout", "bevestiger"], "synonyms": ["vastzetten", "aandraaien"]},
-  "snijden": {"lemma": "snijden", "nouns": ["mes", "snijder", "schaar"], "synonyms": ["afsnijden", "trimmen"]}
+  "snijden": {"lemma": "snijden", "nouns": ["mes", "snijder", "schaar"], "synonyms": ["afsnijden", "trimmen"]},
+  "zagen": {"lemma": "zagen", "nouns": ["zaag", "handzaag", "decoupeerzaag"], "synonyms": ["afzagen", "snijden"]},
+  "schuren": {"lemma": "schuren", "nouns": ["schuurmachine", "schuurpapier"], "synonyms": ["gladmaken", "polijsten"]},
+  "verven": {"lemma": "verven", "nouns": ["verf", "kwast", "roller"], "synonyms": ["schilderen", "coaten"]},
+  "meten": {"lemma": "meten", "nouns": ["meetlint", "caliper", "liniaal"], "synonyms": ["peilen", "meter"]},
+  "lassen": {"lemma": "lassen", "nouns": ["lasapparaat", "lasser"], "synonyms": ["samenvoegen", "hechten"]},
+  "slijpen": {"lemma": "slijpen", "nouns": ["slijper", "haakse slijper"], "synonyms": ["scherpen", "afbramen"]},
+  "polijsten": {"lemma": "polijsten", "nouns": ["polijstmachine", "poetser"], "synonyms": ["glanzen", "buffen"]},
+  "reinigen": {"lemma": "reinigen", "nouns": ["reiniger", "stofzuiger", "detergent"], "synonyms": ["schoonmaken", "wassen"]},
+  "opladen": {"lemma": "opladen", "nouns": ["oplader", "laadstation"], "synonyms": ["laden", "opwekken"]},
+  "mengen": {"lemma": "mengen", "nouns": ["mixer", "blender"], "synonyms": ["mixen", "combineren"]},
+  "heffen": {"lemma": "heffen", "nouns": ["hef", "krik", "takel"], "synonyms": ["liften", "opheffen"]}
 }
