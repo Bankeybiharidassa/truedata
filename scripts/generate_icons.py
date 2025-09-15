@@ -2,10 +2,11 @@
 """Download and restyle SVG icons for e-commerce categories.
 
 The script reads a CSV file describing category taxonomy rows and downloads an
-SVG for each row using the svgapi.com JSON API. Icons can either keep their
-source styling (the default "classic" variant) or be recoloured according to a
-predefined style and are written to ``<output>/<style>/<category>/<Catid>.svg``
-alongside a ``manifest.csv`` with metadata useful for validation.
+SVG for each row using the svgapi.com JSON API. Icons can be exported in
+multiple style variants and are written to ``<output>/<style>/<category>/<Catid>.svg``
+alongside a ``manifest.csv`` with metadata useful for validation. A raw variant
+is provided so operators can review the untouched download from the catalogue;
+those files are prefixed with ``test-``.
 
 The selected icon for a category is deterministic: a SHA256 hash of ``Catid``
 is used to pick one item from the API search results.
@@ -19,7 +20,7 @@ import os
 import re
 import sys
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Tuple
+from typing import Any, Dict, Iterable, List, Optional, Tuple
 
 import requests
 import xml.etree.ElementTree as ET
@@ -34,7 +35,11 @@ from taxonomy.synonyms import build_queries  # noqa: E402
 
 
 STYLE_VARIANTS = {
-    "classic": {"preserve_source_style": True},
+    "original": {
+        "raw_output": True,
+        "preserve_source_style": True,
+        "file_prefix": "test-",
+    },
     "brand": {
         "stroke_color": "#E63B14",
         "stroke_width": 12,
@@ -50,17 +55,21 @@ STYLE_VARIANTS = {
         "stroke_width": 16,
         "fill": "none",
     },
-    "blue": {
-        "stroke_color": "#004165",
-        "stroke_width": 12,
-        "fill": "none",
-    },
     "mono": {
         "stroke_color": "#000000",
         "stroke_width": 12,
         "fill": "none",
     },
+    "blue": {
+        "stroke_color": "#004165",
+        "stroke_width": 12,
+        "fill": "none",
+    },
 }
+
+STYLE_ALIASES = {"classic": "original"}
+
+DEFAULT_STYLES = ("original", "brand", "thin", "thick", "mono")
 
 SVG_NS = "http://www.w3.org/2000/svg"
 SVGAPI_LIST_URL = "https://api.svgapi.com/v1/{key}/list/"
@@ -134,6 +143,35 @@ def iter_search_queries(category: str) -> List[str]:
         if term not in queries:
             queries.append(term)
     return queries
+
+
+def parse_dimension(value: Optional[str]) -> float:
+    """Return the numeric part of a dimension string (e.g. ``24px`` → ``24``)."""
+
+    if not value:
+        return 0.0
+    match = re.search(r"-?\d+(?:\.\d+)?", value)
+    if not match:
+        return 0.0
+    try:
+        return float(match.group())
+    except ValueError:
+        return 0.0
+
+
+def viewbox_dimensions(value: Optional[str]) -> Tuple[float, float]:
+    """Extract width and height from a viewBox definition."""
+
+    if not value:
+        return 0.0, 0.0
+    parts = [p for p in re.split(r"[ ,]+", value.strip()) if p]
+    if len(parts) != 4:
+        return 0.0, 0.0
+    try:
+        _, _, width, height = (float(part) for part in parts)
+    except ValueError:
+        return 0.0, 0.0
+    return width, height
 
 
 def fetch_icon_svg(
@@ -210,17 +248,32 @@ def fetch_icon_svg(
     return "", "", ""
 
 
-def restyle_svg(svg_data: str, params: dict) -> Tuple[str, List[str], str]:
-    """Restyle raw SVG data to our specification."""
+def restyle_svg(svg_data: str, params: dict) -> Tuple[str, List[str], str, int, int]:
+    """Restyle raw SVG data to our specification and report basic metadata."""
     src_root = ET.fromstring(svg_data)
-    view_box = src_root.get("viewBox")
-    if view_box:
-        _, _, w, h = map(float, view_box.split())
-    else:
-        w = float(src_root.get("width", 24))
-        h = float(src_root.get("height", 24))
-        view_box = f"0 0 {w} {h}"
-    scale = 256 / max(w, h)
+    view_box = src_root.get("viewBox") or src_root.get("viewbox")
+    vb_width, vb_height = viewbox_dimensions(view_box)
+    width_attr = parse_dimension(src_root.get("width"))
+    height_attr = parse_dimension(src_root.get("height"))
+    base_width = vb_width or width_attr or 24.0
+    base_height = vb_height or height_attr or 24.0
+    original_width = width_attr or vb_width or base_width
+    original_height = height_attr or vb_height or base_height
+
+    if params.get("raw_output"):
+        primitives: List[str] = []
+        for child in list(src_root):
+            primitives.append(child.tag.split("}")[-1])
+        signature = element_signature(src_root)
+        path_hash = hashlib.sha256(signature.encode()).hexdigest()
+        width_value = original_width or base_width
+        height_value = original_height or base_height
+        width_out = int(round(width_value)) if width_value else 0
+        height_out = int(round(height_value)) if height_value else 0
+        return svg_data, primitives, path_hash, width_out, height_out
+
+    scale_base = max(base_width, base_height) or 256.0
+    scale = 256 / scale_base
 
     preserve_style = params.get("preserve_source_style", False)
     svg_attrib = {
@@ -269,7 +322,7 @@ def restyle_svg(svg_data: str, params: dict) -> Tuple[str, List[str], str]:
     shapes_sig = element_signature(g)
     path_hash = hashlib.sha256(shapes_sig.encode()).hexdigest()
     svg_content = ET.tostring(root, encoding="unicode")
-    return svg_content, primitives, path_hash
+    return svg_content, primitives, path_hash, 256, 256
 
 
 def main():
@@ -278,7 +331,7 @@ def main():
     parser.add_argument("--out", default="output/test2", help="Output directory root")
     parser.add_argument(
         "--styles",
-        default="classic",
+        default=",".join(DEFAULT_STYLES),
         help="Comma-separated list of style variants to generate",
     )
     parser.add_argument(
@@ -309,9 +362,13 @@ def main():
     requested_styles: Iterable[str] = [s.strip() for s in args.styles.split(',') if s.strip()]
     styles: Dict[str, Dict[str, Any]] = {}
     for style in requested_styles:
-        if style not in STYLE_VARIANTS:
-            raise SystemExit(f"Unknown style variant '{style}'. Available: {', '.join(STYLE_VARIANTS)}")
-        styles[style] = STYLE_VARIANTS[style]
+        canonical_name = STYLE_ALIASES.get(style, style)
+        if canonical_name not in STYLE_VARIANTS:
+            raise SystemExit(
+                f"Unknown style variant '{style}'. Available: {', '.join(sorted(STYLE_VARIANTS))}"
+            )
+        style_params = dict(STYLE_VARIANTS[canonical_name])
+        styles[style] = style_params
 
     session = requests.Session()
     logging.info("Writing logs to %s", log_path)
@@ -323,6 +380,7 @@ def main():
         style_dir = out_root / style_name
         style_dir.mkdir(parents=True, exist_ok=True)
         manifest_rows = []
+        file_prefix = params.get("file_prefix", "")
         for row in rows:
             catid = row['Catid']
             category_name = deepest_category(row) or row['Root category'] or 'Unknown'
@@ -353,7 +411,9 @@ def main():
                 continue
 
             try:
-                svg_content, primitives, path_hash = restyle_svg(svg_raw, params)
+                svg_content, primitives, path_hash, width_out, height_out = restyle_svg(
+                    svg_raw, params
+                )
             except ET.ParseError as exc:
                 logging.warning("Failed to parse SVG for %s (%s): %s", catid, source_url, exc)
                 manifest_rows.append({
@@ -374,19 +434,22 @@ def main():
 
             cat_dir = style_dir / category_slug
             cat_dir.mkdir(parents=True, exist_ok=True)
-            file_path = cat_dir / f"{catid}.svg"
+            file_path = cat_dir / f"{file_prefix}{catid}.svg"
             with open(file_path, 'w', encoding='utf-8') as sf:
                 sf.write(svg_content)
 
+            concept = f"downloaded from svgapi ({icon_title})"
+            if params.get("raw_output"):
+                concept += " [raw]"
             manifest_rows.append({
                 'Catid': catid,
                 'category': category_slug,
                 'title_selected': category_name,
-                'concept_notes': f"downloaded from svgapi ({icon_title})",
+                'concept_notes': concept,
                 'primitives_used': ','.join(primitives),
                 'path_hash': path_hash,
-                'width': 256,
-                'height': 256,
+                'width': width_out,
+                'height': height_out,
                 'stroke_width': style_stroke_width if style_stroke_width is not None else '',
                 'color_hex': style_color or '',
                 'validation_passed': 'TRUE',

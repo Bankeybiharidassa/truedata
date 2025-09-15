@@ -112,12 +112,13 @@ Icons are created with a transparent background. To apply or remove a solid back
 ## Test Run and Style Variants
 
 Use `scripts/generate_icons.py` to create sample icons for evaluation using the
-[svgapi.com](https://svgapi.com) catalogue. By default it outputs the "classic"
-brand style; provide `--styles` with a comma-separated list to render multiple
-variants in one run.
+[svgapi.com](https://svgapi.com) catalogue. By default the script now renders
+five variants per category: a raw download (`original`) saved as `test-*.svg`
+for operator checks, plus four styled exports (`brand`, `thin`, `thick`,
+`mono`). Provide `--styles` with a comma-separated list to customise the set.
 
 ```
-python scripts/generate_icons.py --csv categories_sample.csv --out output/test --styles classic
+python scripts/generate_icons.py --csv categories_sample.csv --out output/test
 ```
 
 The script writes a `generation.log` file inside the requested output folder so
