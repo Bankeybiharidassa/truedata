@@ -784,9 +784,22 @@ def icon_heartbeat(ctx: IconContext) -> Tuple[List[Shape], str]:
 
 
 def icon_lock(ctx: IconContext) -> Tuple[List[Shape], str]:
-    body = rect(92, 152, 72, 72, rx=12)
-    shackle = path("M104 152 Q104 120 128 120 Q152 120 152 152")
-    keyhole = path("M128 180 L128 212")
+    body_width = ctx.jitter(72, 6)
+    body_height = ctx.jitter(72, 4)
+    body_left = 128 - body_width / 2
+    body_top = ctx.jitter(152, 3)
+    body = rect(body_left, body_top, body_width, body_height, rx=12)
+    shackle_height = body_top - ctx.jitter(28, 4)
+    shackle_width = body_width * ctx.ratio(0.65, 0.85)
+    shackle_left = 128 - shackle_width / 2
+    shackle = path(
+        f"M{fmt(shackle_left)} {fmt(body_top)}",
+        f"Q{fmt(shackle_left)} {fmt(shackle_height)} 128 {fmt(shackle_height - ctx.jitter(2, 1))}",
+        f"Q{fmt(shackle_left + shackle_width)} {fmt(shackle_height)} {fmt(shackle_left + shackle_width)} {fmt(body_top)}",
+    )
+    keyhole_top = body_top + body_height * ctx.ratio(0.35, 0.5)
+    keyhole_bottom = body_top + body_height * ctx.ratio(0.65, 0.8)
+    keyhole = path(f"M128 {fmt(keyhole_top)}", f"L128 {fmt(keyhole_bottom)}")
     shapes = [body, shackle, keyhole]
     note = "Childproof lock with shackle"
     return shapes, note
@@ -820,9 +833,21 @@ def icon_diaper_pail(ctx: IconContext) -> Tuple[List[Shape], str]:
 
 
 def icon_safety_pin(ctx: IconContext) -> Tuple[List[Shape], str]:
-    loop = path("M92 184 Q128 144 164 184")
-    clasp = path("M164 184 Q176 212 152 224")
-    shaft = path("M92 184 L152 224")
+    base_y = ctx.jitter(184, 4)
+    peak_y = ctx.jitter(140, 6)
+    left = ctx.jitter(92, 5)
+    right = ctx.jitter(164, 5)
+    loop = path(
+        f"M{fmt(left)} {fmt(base_y)}",
+        f"Q128 {fmt(peak_y)} {fmt(right)} {fmt(base_y + ctx.jitter(2, 2))}",
+    )
+    clasp_tip_x = right + ctx.jitter(20, 4)
+    clasp_tip_y = base_y + ctx.jitter(44, 5)
+    clasp = path(
+        f"M{fmt(right)} {fmt(base_y + ctx.jitter(2, 2))}",
+        f"Q{fmt(right + ctx.jitter(12, 3))} {fmt(base_y + ctx.jitter(24, 4))} {fmt(clasp_tip_x)} {fmt(clasp_tip_y)}",
+    )
+    shaft = line(left, base_y, clasp_tip_x, clasp_tip_y)
     shapes = [loop, clasp, shaft]
     note = "Safety pin for cloth diapers"
     return shapes, note
@@ -1201,10 +1226,29 @@ def icon_bucket(ctx: IconContext) -> Tuple[List[Shape], str]:
 
 
 def icon_roof(ctx: IconContext) -> Tuple[List[Shape], str]:
-    roof = path("M72 148 L128 92 L184 148")
-    shingles = path("M84 164 L172 164", "M96 180 L160 180")
-    ridge = line(128, 92, 128, 60)
-    shapes = [roof, shingles, ridge]
+    span = ctx.jitter(112, 8)
+    base_y = ctx.jitter(148, 4)
+    left = 128 - span / 2
+    right = 128 + span / 2
+    peak_x = 128 + ctx.jitter(0, 6)
+    peak_y = ctx.jitter(90, 4)
+    roof = path(
+        f"M{fmt(left)} {fmt(base_y)}",
+        f"L{fmt(peak_x)} {fmt(peak_y)}",
+        f"L{fmt(right)} {fmt(base_y + ctx.jitter(2, 1))}",
+    )
+    shingle1_y = base_y + ctx.jitter(16, 2)
+    shingle2_y = base_y + ctx.jitter(32, 3)
+    shingle1 = path(
+        f"M{fmt(left + 12)} {fmt(shingle1_y)}",
+        f"L{fmt(right - 12)} {fmt(shingle1_y)}",
+    )
+    shingle2 = path(
+        f"M{fmt(left + 24)} {fmt(shingle2_y)}",
+        f"L{fmt(right - 24)} {fmt(shingle2_y)}",
+    )
+    ridge = line(peak_x, peak_y, peak_x, peak_y - ctx.jitter(28, 3))
+    shapes = [roof, shingle1, shingle2, ridge]
     note = "Roofline with layered shingles"
     return shapes, note
 
