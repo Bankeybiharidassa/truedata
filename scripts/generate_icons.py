@@ -42,21 +42,37 @@ def slugify(name: str) -> str:
 
 
 def fetch_icon_svg(category: str, catid: str) -> Tuple[str, str]:
-    """Return raw SVG data and source URL for a category."""
-    search = requests.get(
-        "https://api.iconify.design/search",
-        params={"query": category, "limit": 50},
-        timeout=10,
-    )
-    search.raise_for_status()
+    """Return raw SVG data and source URL for a category.
+
+    If the lookup or download fails, an empty tuple is returned and the
+    reason is printed so callers can record why no public icon was used.
+    """
+    try:
+        search = requests.get(
+            "https://api.iconify.design/search",
+            params={"query": category, "limit": 50},
+            timeout=10,
+        )
+        search.raise_for_status()
+    except requests.RequestException as exc:  # network or HTTP error
+        print(f"[iconify] search failed for '{category}': {exc}")
+        return "", ""
+
     icons = search.json().get("icons", [])
     if not icons:
+        print(f"[iconify] no icons found for '{category}'")
         return "", ""
+
     idx = int(hashlib.sha256(catid.encode()).hexdigest(), 16) % len(icons)
     icon_name = icons[idx]
     svg_url = f"https://api.iconify.design/{icon_name}.svg"
-    svg_resp = requests.get(svg_url, timeout=10)
-    svg_resp.raise_for_status()
+    try:
+        svg_resp = requests.get(svg_url, timeout=10)
+        svg_resp.raise_for_status()
+    except requests.RequestException as exc:
+        print(f"[iconify] download failed for '{svg_url}': {exc}")
+        return "", ""
+
     return svg_resp.text, svg_url
 
 
@@ -115,15 +131,25 @@ def main():
             category_name = row['Sub category'] or row['Root category']
             category_slug = slugify(category_name)
             svg_raw, source_url = fetch_icon_svg(category_name, catid)
-            if svg_raw:
-                svg_content, primitives, path_hash = restyle_svg(svg_raw, params)
-            else:
-                # simple placeholder circle if search fails
-                # radius varies deterministically with catid to keep geometry unique
-                radius = 8 + int(hashlib.sha256(catid.encode()).hexdigest(), 16) % 8
-                placeholder = f'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="{radius}"/></svg>'
-                svg_content, primitives, path_hash = restyle_svg(placeholder, params)
-                source_url = 'generated'
+            if not svg_raw:
+                # No public icon available – record the failure and skip file output
+                manifest_rows.append({
+                    'Catid': catid,
+                    'category': category_slug,
+                    'title_selected': category_name,
+                    'concept_notes': 'no public icon found',
+                    'primitives_used': '',
+                    'path_hash': '',
+                    'width': 0,
+                    'height': 0,
+                    'stroke_width': params['stroke_width'],
+                    'color_hex': params['stroke_color'],
+                    'validation_passed': 'FALSE',
+                    'source_icon': '',
+                })
+                continue
+
+            svg_content, primitives, path_hash = restyle_svg(svg_raw, params)
 
             cat_dir = os.path.join(style_dir, category_slug)
             os.makedirs(cat_dir, exist_ok=True)
@@ -143,7 +169,7 @@ def main():
                 'stroke_width': params['stroke_width'],
                 'color_hex': params['stroke_color'],
                 'validation_passed': 'TRUE',
-                'source_icon': source_url or 'generated',
+                'source_icon': source_url,
             })
 
         manifest_path = os.path.join(style_dir, 'manifest.csv')
