@@ -1,51 +1,201 @@
 dir,catid,subject,style_ok,style_errors,path_hash,sem_match,source_icon
-output/test/blue,1005,Clothing,False,missing/incorrect stroke,93eeead76f719907,UNKNOWN,generated
-output/test/blue,1002,Furniture,False,missing/incorrect stroke,5e096ab25eb43dee,UNKNOWN,generated
-output/test/blue,1009,Garden,False,missing/incorrect stroke,27cf40473dcf2586,UNKNOWN,generated
-output/test/blue,1007,Beauty,False,missing/incorrect stroke,3845259b50e7a45a,UNKNOWN,generated
-output/test/blue,1003,Toys,False,missing/incorrect stroke,1f0a2b11b34a4456,UNKNOWN,generated
-output/test/blue,1001,Electronics,False,missing/incorrect stroke,19de665dd996a0fe,UNKNOWN,generated
-output/test/blue,1008,Automotive,False,missing/incorrect stroke,3aff8a85c7426d31,UNKNOWN,generated
-output/test/blue,1010,Kitchen,False,missing/incorrect stroke,658e37501f3c09b7,UNKNOWN,generated
-output/test/blue,1006,Sports,False,missing/incorrect stroke,5f56720af64f690c,UNKNOWN,generated
-output/test/blue,1004,Books,False,missing/incorrect stroke,2fdbac09b3917fc5,UNKNOWN,generated
-output/test/classic,1005,Clothing,True,,dd03786f987883f7,UNKNOWN,generated
-output/test/classic,1002,Furniture,True,,50ca284cb184a63c,UNKNOWN,generated
-output/test/classic,1009,Garden,True,,3769dab86352f8bc,UNKNOWN,generated
-output/test/classic,1007,Beauty,True,,c6debaf8950881df,UNKNOWN,generated
-output/test/classic,1003,Toys,True,,db1bfc6b05a606b3,UNKNOWN,generated
-output/test/classic,1001,Electronics,True,,3642f59919353707,UNKNOWN,generated
-output/test/classic,1008,Automotive,True,,31ffffb9757e49e0,UNKNOWN,generated
-output/test/classic,1010,Kitchen,True,,ed6d117a29829600,UNKNOWN,generated
-output/test/classic,1006,Sports,True,,2db48bbaab4fca37,UNKNOWN,generated
-output/test/classic,1004,Books,True,,5dea5c0b0b4c8a82,UNKNOWN,generated
-output/test/mono,1005,Clothing,False,missing/incorrect stroke,9307fa5d8e846e5a,UNKNOWN,generated
-output/test/mono,1002,Furniture,False,missing/incorrect stroke,2890ee57b01b5062,UNKNOWN,generated
-output/test/mono,1009,Garden,False,missing/incorrect stroke,fb2d5a59ed170282,UNKNOWN,generated
-output/test/mono,1007,Beauty,False,missing/incorrect stroke,8892fe7bb33a4dd9,UNKNOWN,generated
-output/test/mono,1003,Toys,False,missing/incorrect stroke,35fc9955c8106f3a,UNKNOWN,generated
-output/test/mono,1001,Electronics,False,missing/incorrect stroke,d7b67036cf3893f5,UNKNOWN,generated
-output/test/mono,1008,Automotive,False,missing/incorrect stroke,a1908695dec179eb,UNKNOWN,generated
-output/test/mono,1010,Kitchen,False,missing/incorrect stroke,e74ff3a3e57575d7,UNKNOWN,generated
-output/test/mono,1006,Sports,False,missing/incorrect stroke,598a1f4365cc9371,UNKNOWN,generated
-output/test/mono,1004,Books,False,missing/incorrect stroke,2863ef883e08b786,UNKNOWN,generated
-output/test/thick,1005,Clothing,False,missing/incorrect stroke-width,f92d8e403e60197f,UNKNOWN,generated
-output/test/thick,1002,Furniture,False,missing/incorrect stroke-width,098e84899966a636,UNKNOWN,generated
-output/test/thick,1009,Garden,False,missing/incorrect stroke-width,2b69b0430005054e,UNKNOWN,generated
-output/test/thick,1007,Beauty,False,missing/incorrect stroke-width,723fe17bf5f8527a,UNKNOWN,generated
-output/test/thick,1003,Toys,False,missing/incorrect stroke-width,9915ae2375a576da,UNKNOWN,generated
-output/test/thick,1001,Electronics,False,missing/incorrect stroke-width,bf2f3015f589bbf1,UNKNOWN,generated
-output/test/thick,1008,Automotive,False,missing/incorrect stroke-width,04a1ea913c4af1d4,UNKNOWN,generated
-output/test/thick,1010,Kitchen,False,missing/incorrect stroke-width,2860f8c78c209273,UNKNOWN,generated
-output/test/thick,1006,Sports,False,missing/incorrect stroke-width,f9c03613d69a7d76,UNKNOWN,generated
-output/test/thick,1004,Books,False,missing/incorrect stroke-width,35946e3f1d106e75,UNKNOWN,generated
-output/test/thin,1005,Clothing,False,missing/incorrect stroke-width,0586e83fbfcffd1d,UNKNOWN,generated
-output/test/thin,1002,Furniture,False,missing/incorrect stroke-width,a41fa2a6cb3bae15,UNKNOWN,generated
-output/test/thin,1009,Garden,False,missing/incorrect stroke-width,72dfdd09f52363ca,UNKNOWN,generated
-output/test/thin,1007,Beauty,False,missing/incorrect stroke-width,8f46c0e72533375a,UNKNOWN,generated
-output/test/thin,1003,Toys,False,missing/incorrect stroke-width,1fb62d12ae6245d6,UNKNOWN,generated
-output/test/thin,1001,Electronics,False,missing/incorrect stroke-width,18b52434946abf1f,UNKNOWN,generated
-output/test/thin,1008,Automotive,False,missing/incorrect stroke-width,f8ab88928bf5d218,UNKNOWN,generated
-output/test/thin,1010,Kitchen,False,missing/incorrect stroke-width,a9add04917a680c9,UNKNOWN,generated
-output/test/thin,1006,Sports,False,missing/incorrect stroke-width,1b87686b1d6a41c9,UNKNOWN,generated
-output/test/thin,1004,Books,False,missing/incorrect stroke-width,289c8832260b86ce,UNKNOWN,generated
+output/categories_200,6776,Ophoogzand,True,,e9f180dd0c394161,UNKNOWN,generated
+output/categories_200,9206,Accessoires voor neuszuigers voor baby's,True,,f79c2d59429a64e0,UNKNOWN,generated
+output/categories_200,2092,Flesspenen,True,,0e585b7a853c4901,UNKNOWN,generated
+output/categories_200,1695,Borstpompen,True,,a0c9586a9dd3004d,UNKNOWN,generated
+output/categories_200,8611,Babyschommelstoelen,True,,10e1b3f2e48f820e,UNKNOWN,generated
+output/categories_200,6878,Verfmengbekers,True,,08ee264e93151067,UNKNOWN,generated
+output/categories_200,4408,Babydoekjes dispensers,True,,3a7d27be2f5a9be9,UNKNOWN,generated
+output/categories_200,3676,Babyhoofdsteunen,True,,327b25407d913cac,UNKNOWN,generated
+output/categories_200,7133,Babyborstels & -kammen,True,,2dacc5de4d7e91be,UNKNOWN,generated
+output/categories_200,7131,Lotions voor babyhaar,True,,6bb449d94768e298,UNKNOWN,generated
+output/categories_200,5039,Luierinlegdoekjes,True,,5e1fbe4812341867,UNKNOWN,generated
+output/categories_200,8192,Accessoires voor babyschommelstoelen & wipstoelen,True,,c0aae630b6cccc14,UNKNOWN,generated
+output/categories_200,7867,Verfemmerroosters,True,,86f463a02c75454f,UNKNOWN,generated
+output/categories_200,9256,Zitjes voor kinderwagens,True,,3dc297b1626edbcf,UNKNOWN,generated
+output/categories_200,5179,Gipsen,True,,11de1268fda63803,UNKNOWN,generated
+output/categories_200,2301,Luierafvalbakken,True,,e70367c9d48a5a24,UNKNOWN,generated
+output/categories_200,5171,Verfverdunners & -verwijderaars,True,,16c211684cd6e105,UNKNOWN,generated
+output/categories_200,6853,Vingerbeschermers voor baby's,True,,7d06acdb6eadb9c5,UNKNOWN,generated
+output/categories_200,5136,Zwangerschapskussens,True,,d82d9c8191031d37,UNKNOWN,generated
+output/categories_200,7393,Zwemluiers,True,,73ba37c450ebf73c,UNKNOWN,generated
+output/categories_200,2075,Playpennen,True,,f0eeed30e4eb1cf4,UNKNOWN,generated
+output/categories_200,2303,Babyshampoos,True,,77c98bcad24f586f,UNKNOWN,generated
+output/categories_200,7145,Luierpinnen & sluitingen,True,,82b7b805c6dada44,UNKNOWN,generated
+output/categories_200,5761,Dopplers,True,,2ea9d7d29c355f23,UNKNOWN,generated
+output/categories_200,9235,Lakken,True,,ffbeac7f6ebae41f,UNKNOWN,generated
+output/categories_200,3444,Babyhoekbeschermers,True,,677b6d6972816940,UNKNOWN,generated
+output/categories_200,2399,Wiegkussens,True,,b4eec54323773c8c,UNKNOWN,generated
+output/categories_200,1697,Baby cadeausets,True,,10a697ec940fbafb,UNKNOWN,generated
+output/categories_200,5094,Dakbedekkingen,True,,05d6089fa5fea952,UNKNOWN,generated
+output/categories_200,1986,"Voeden, verschonen & verzorgen",True,,cc030e922c4590d6,UNKNOWN,generated
+output/categories_200,2090,Babybadzitjes,True,,8ed7f75c2637ac63,UNKNOWN,generated
+output/categories_200,4780,Binnenverf,True,,f3232abe361434df,UNKNOWN,generated
+output/categories_200,4837,Verfkleuren,True,,501eea527d9e7c6c,UNKNOWN,generated
+output/categories_200,4688,Babyvoedingbereiders,True,,b9658d5fc9e76473,UNKNOWN,generated
+output/categories_200,3439,Babymatrassen,True,,d891186e5bb0e7e0,UNKNOWN,generated
+output/categories_200,5145,Babybubbelbaden,True,,3ce6c200e5b358e1,UNKNOWN,generated
+output/categories_200,7126,Hulpmiddelen & accessoires voor het baden van baby's.,True,,5a6a2cd12934f522,UNKNOWN,generated
+output/categories_200,4722,Boerdoekjes,True,,3dcb5f3eacdd9de1,UNKNOWN,generated
+output/categories_200,4361,Babyzwembanden,True,,6a8d67af0d1b0c3a,UNKNOWN,generated
+output/categories_200,2077,Babyloopstoelen,True,,6f596c20bc9a2ca5,UNKNOWN,generated
+output/categories_200,3833,Babydekens,True,,0ae1f9f7bebfbb65,UNKNOWN,generated
+output/categories_200,6658,Cement,True,,86d1f16e4cdfeef3,UNKNOWN,generated
+output/categories_200,7293,Isoleerverven & afdichters voor oppervlakken,True,,f1a55e9b5f08ddaa,UNKNOWN,generated
+output/categories_200,6888,Houtafwerkingsoliën,True,,d837d7c818988737,UNKNOWN,generated
+output/categories_200,2089,Babybadjes,True,,5e53c1d6ef595a88,UNKNOWN,generated
+output/categories_200,4783,Verfrollers,True,,d1b8bd3439d6224a,UNKNOWN,generated
+output/categories_200,5172,Verf- & lakverwijderaars,True,,f6992550246a397d,UNKNOWN,generated
+output/categories_200,1655,Flessensterilisatoren,True,,1cf3938c1a693324,UNKNOWN,generated
+output/categories_200,2299,Babyweegschalen,True,,8c3f03f3870e3696,UNKNOWN,generated
+output/categories_200,5306,Producten voor oppervlaktevoorbereiding,True,,816a5c4c5d58ffc4,UNKNOWN,generated
+output/categories_200,2300,Babynachtlampen,True,,fa9c701d88fa9738,UNKNOWN,generated
+output/categories_200,6856,Attributen voor babymijlpalen,True,,9bd81ad9e2b391dc,UNKNOWN,generated
+output/categories_200,2307,Baby-videomonitoren,True,,14817722648ed7ef,UNKNOWN,generated
+output/categories_200,6087,Luierbroekjes,True,,76ac9905195e9446,UNKNOWN,generated
+output/categories_200,1987,Veiligheidsproducten voor baby's,True,,efefcf3cb96f1a15,UNKNOWN,generated
+output/categories_200,5991,Wegwerpluiers,True,,ba172cf56c90ff85,UNKNOWN,generated
+output/categories_200,7591,Airbrushes,True,,05f82e4a2411422a,UNKNOWN,generated
+output/categories_200,1980,Baby & kind,True,,f46a7c463eb82d70,UNKNOWN,generated
+output/categories_200,5146,Babyzeep,True,,6f1d9c26bb1a263e,UNKNOWN,generated
+output/categories_200,4970,Babyklamboes,True,,d6719470df4406b8,UNKNOWN,generated
+output/categories_200,5337,Verwijderaars voor afdichtingsmiddel,True,,3eb355dc0eb91047,UNKNOWN,generated
+output/categories_200,3087,Peutervoedingaccessoires,True,,a7b549901f23d5af,UNKNOWN,generated
+output/categories_200,2409,Babyspeelrekken en -matten,True,,02591e147fb448a1,UNKNOWN,generated
+output/categories_200,3660,Box accessoires,True,,f7f225db885e7600,UNKNOWN,generated
+output/categories_200,4374,Accessoires voor babyfoon met video,True,,e1390115172ad99a,UNKNOWN,generated
+output/categories_200,3671,Babyschaduwtenten,True,,1656c6f9f4ef7f24,UNKNOWN,generated
+output/categories_200,2094,Wipstoeltjes,True,,c68a92243d300963,UNKNOWN,generated
+output/categories_200,6806,Verfzeven,True,,405a6d647ec2fd95,UNKNOWN,generated
+output/categories_200,4607,Hoofdbeschermers & bekleding voor wieg,True,,7e9665e8bd603914,UNKNOWN,generated
+output/categories_200,5762,Accessoires voor zuigflessen,True,,2cc59c4305fca61c,UNKNOWN,generated
+output/categories_200,1698,Peutervoeding,True,,0dd5c84d03f596a7,UNKNOWN,generated
+output/categories_200,5056,Wikkeldoeken,True,,f9b4215da24dd9a5,UNKNOWN,generated
+output/categories_200,2101,Badsponsjes voor baby's,True,,5bf6c4627e5b74b5,UNKNOWN,generated
+output/categories_200,2086,Herbruikbare luiers,True,,56b89b8b485bc7a6,UNKNOWN,generated
+output/categories_200,8422,Serviessets voor mensen met alzheimer,True,,6a10c532f8109014,UNKNOWN,generated
+output/categories_200,5426,Verwijderaars voor afwerkingswas,True,,f898c43f37d67344,UNKNOWN,generated
+output/categories_200,3654,Zwangerschapsbanden,True,,88be4b5c735d0f34,UNKNOWN,generated
+output/categories_200,4385,Babyvoedingsbakjes,True,,ab9e8a56f11d039d,UNKNOWN,generated
+output/categories_200,1162,Penselen voor algemeen gebruik,True,,8ef03921bb1e7a1e,UNKNOWN,generated
+output/categories_200,7124,Babyverzorgingsproducten,True,,28e94e0d3072010a,UNKNOWN,generated
+output/categories_200,5410,Tegellijm & voegsel,True,,ffb6f17aa7c45f7e,UNKNOWN,generated
+output/categories_200,2530,Rammelaars,True,,25fa2c087b4e8442,UNKNOWN,generated
+output/categories_200,6872,Verftoevoegingen,True,,10988b242692328d,UNKNOWN,generated
+output/categories_200,5757,Peuterservies,True,,89eb901a64e85752,UNKNOWN,generated
+output/categories_200,6805,Verfapplicators & schilderbenodigdheden,True,,8bc63e60d5820684,UNKNOWN,generated
+output/categories_200,2291,Voetenzakken voor kinderwagens,True,,3a45448f1ee9cabc,UNKNOWN,generated
+output/categories_200,1983,Kinderwagens,True,,95a572a272f07910,UNKNOWN,generated
+output/categories_200,4367,Hangend babyspeelgoed,True,,7d31f1531ee0aa6b,UNKNOWN,generated
+output/categories_200,6857,Wielen voor kinderwagens,True,,1b5dfb1a4a082ba6,UNKNOWN,generated
+output/categories_200,2497,Baby badonderstellen,True,,fd51a9471875fe4a,UNKNOWN,generated
+output/categories_200,4785,Verfrollen,True,,285e59d4ba29ce60,UNKNOWN,generated
+output/categories_200,5751,Slopen voor borstvoedingskussens,True,,eefd2c4d3b40f7c2,UNKNOWN,generated
+output/categories_200,2103,Slaapartikelen voor baby's,True,,d2bf88023289a3df,UNKNOWN,generated
+output/categories_200,2105,Hekjes voor kinderbedden,True,,e9bf30e7f160dd69,UNKNOWN,generated
+output/categories_200,2088,Slabbetjes,True,,fa104c8c00014c57,UNKNOWN,generated
+output/categories_200,6516,Activiteitsbenodigdheden voor baby's,True,,6af962926ae09320,UNKNOWN,generated
+output/categories_200,1483,Acrielverf,True,,76dd7022ced37e07,UNKNOWN,generated
+output/categories_200,1981,Reisproducten voor baby's,True,,bbc3f8cc01f00a4a,UNKNOWN,generated
+output/categories_200,6514,Stoelbekledingen & trappelzakken voor baby's,True,,5fd8ad99fb0606ae,UNKNOWN,generated
+output/categories_200,5967,Accessoires voor babymobiels,True,,a397a1f412b54215,UNKNOWN,generated
+output/categories_200,4609,Ledikantlakens,True,,5d3acbadcfbbc1ce,UNKNOWN,generated
+output/categories_200,2104,Baby-cocoons,True,,45cba5bab24c6ac9,UNKNOWN,generated
+output/categories_200,5167,Slaapzakken,True,,e2d5dafa71e60714,UNKNOWN,generated
+output/categories_200,6779,Opritten dichtingsmaterialen & reparatie,True,,eda2d247ef71c65c,UNKNOWN,generated
+output/categories_200,4578,Veranderende tafelkussens & -kleden,True,,f6fd40ac8049ea13,UNKNOWN,generated
+output/categories_200,5099,"Beton, cement & gips",True,,587cf198e5fe6f16,UNKNOWN,generated
+output/categories_200,4347,Verschoonkussenhoezen,True,,da6df230a5c6e7a4,UNKNOWN,generated
+output/categories_200,2187,Babyslaaprollen,True,,32ddb60ddcdee498,UNKNOWN,generated
+output/categories_200,2188,Reiswiegen,True,,8c3f87d2b85c9daf,UNKNOWN,generated
+output/categories_200,5220,Sets voor kindveilig maken,True,,558e608ecb784e38,UNKNOWN,generated
+output/categories_200,1403,Babyfoons,True,,034a08298d9d105a,UNKNOWN,generated
+output/categories_200,7129,Bodyoliën voor babies,True,,8a6f85574fc7ae3e,UNKNOWN,generated
+output/categories_200,2096,Babyjumpers,True,,281d12fbac1a5c0c,UNKNOWN,generated
+output/categories_200,1988,Babybadjes & -potjes,True,,1347b39f1d565dc6,UNKNOWN,generated
+output/categories_200,3085,Peutervoedingsets,True,,6475c1e7d7925a73,UNKNOWN,generated
+output/categories_200,7123,Baby-huidverzorgingsproducten,True,,86a85620c86498c3,UNKNOWN,generated
+output/categories_200,4852,Hardhoutvernieuwers,True,,d17bd84f47d0b51e,UNKNOWN,generated
+output/categories_200,6980,Verfrolbakken,True,,5510557d203683c3,UNKNOWN,generated
+output/categories_200,4126,Babyveiligheidshelmen,True,,ef829f19399a1dc3,UNKNOWN,generated
+output/categories_200,4130,Accessoires voor babybadje,True,,27e422665911753b,UNKNOWN,generated
+output/categories_200,4360,Babyzwembandensets,True,,f51a0314e9447dcc,UNKNOWN,generated
+output/categories_200,4540,Accessoires voor babytraphekje,True,,c855fa5e194aff6a,UNKNOWN,generated
+output/categories_200,4427,Babycrèmes,True,,0f874fbfdbde3db5,UNKNOWN,generated
+output/categories_200,6883,Verf- & lakverdunners,True,,e1d9ed1d20d43312,UNKNOWN,generated
+output/categories_200,1984,Babydragers,True,,d57c5f5286337708,UNKNOWN,generated
+output/categories_200,2398,Baby beddengoed sets,True,,cc7ca333f548d5d2,UNKNOWN,generated
+output/categories_200,5038,Gezondheids- & verzorgingssets voor baby,True,,09a0c0d59400738f,UNKNOWN,generated
+output/categories_200,5317,Doekjes voor oppervlaktevoorbereiding,True,,e20d74637a896247,UNKNOWN,generated
+output/categories_200,4383,Melkpoederdispensers,True,,1da4070c463f5745,UNKNOWN,generated
+output/categories_200,4670,Accessoires voor luieremmer,True,,041e736f9d5878c0,UNKNOWN,generated
+output/categories_200,2185,Toilettrainers,True,,c7f6b008ae539026,UNKNOWN,generated
+output/categories_200,4776,Bouw & installatie,True,,2dd7510673dffce7,UNKNOWN,generated
+output/categories_200,3661,Neusaspirators voor baby's,True,,6d589a4bc25ac84b,UNKNOWN,generated
+output/categories_200,5084,Badsets en huidverzorgingssets voor baby's,True,,f634715f3e195cd8,UNKNOWN,generated
+output/categories_200,1976,Flesverwarmers,True,,3822c8355f83b3c7,UNKNOWN,generated
+output/categories_200,2615,Peuterbestek,True,,8807f6107a74bd8a,UNKNOWN,generated
+output/categories_200,7507,Verfadditieven,True,,75a0d771dbf8afa7,UNKNOWN,generated
+output/categories_200,5289,Afdichtingsprofielen,True,,80513d73783bdc0d,UNKNOWN,generated
+output/categories_200,7302,Accessoires voor babyfoons,True,,4e1e37a1bb8f5fef,UNKNOWN,generated
+output/categories_200,5425,Houtafwerkingswassen,True,,ac110e073ebaea66,UNKNOWN,generated
+output/categories_200,6874,Beautycases voor baby's,True,,0ecc8da0a924cd94,UNKNOWN,generated
+output/categories_200,2087,Kinderpotjes,True,,b1b10da6fb5412d2,UNKNOWN,generated
+output/categories_200,4608,Babykussens,True,,07267dd6a52bc1e1,UNKNOWN,generated
+output/categories_200,8902,"Fopspenen, bijtringen & pijnverlichtingsmiddelen bij doorkomende tandje",True,,1c50b86159af86ea,UNKNOWN,generated
+output/categories_200,4350,Babynagelschaartjes & -knippers,True,,63070d6333afbde7,UNKNOWN,generated
+output/categories_200,1982,Baby-autozitjes,True,,92176164f51c576f,UNKNOWN,generated
+output/categories_200,2416,Afstandalarmen voor kinderen,True,,a005ca6d504be7e1,UNKNOWN,generated
+output/categories_200,2302,Babypoeders,True,,bbc00d45bfadee4f,UNKNOWN,generated
+output/categories_200,2082,Traphekjes,True,,d1d3f9234727987f,UNKNOWN,generated
+output/categories_200,1944,Badthermometers,True,,600cfdaf6132b207,UNKNOWN,generated
+output/categories_200,6650,Specialistische verven,True,,805be10fec941649,UNKNOWN,generated
+output/categories_200,2102,Verschoonkussens,True,,512457150a9249bf,UNKNOWN,generated
+output/categories_200,3440,Babymatrasbeschermers,True,,1fad2fabbb8b7383,UNKNOWN,generated
+output/categories_200,7127,Bodylotions en -melk voor baby's,True,,493034885910bea0,UNKNOWN,generated
+output/categories_200,2078,Babyswings,True,,2475e640c3ccdfea,UNKNOWN,generated
+output/categories_200,6649,(Grond)verven & lakken,True,,c3e591d501c7bd96,UNKNOWN,generated
+output/categories_200,2079,Luiertassen,True,,50426531c7efd1cd,UNKNOWN,generated
+output/categories_200,2098,Borstvoedingskussens,True,,176f5ceec1564a68,UNKNOWN,generated
+output/categories_200,3663,Babyreisbedjes,True,,4e93e22e15e8183f,UNKNOWN,generated
+output/categories_200,5752,Houtbehandeling,True,,67872fdbeae1f42e,UNKNOWN,generated
+output/categories_200,1693,Bijtringen,True,,54e4c762a2fd4061,UNKNOWN,generated
+output/categories_200,3847,Kindermeetlatten,True,,d0d1971383e2c990,UNKNOWN,generated
+output/categories_200,5015,Binnenlakken,True,,f727f59561010fa2,UNKNOWN,generated
+output/categories_200,5012,Babyspeenhoezen,True,,1c7e92507a903f8d,UNKNOWN,generated
+output/categories_200,2305,Babyoliën,True,,36afd29ed034a37f,UNKNOWN,generated
+output/categories_200,6518,Veiligheidstuigjes & leibanden voor baby's,True,,5146568cf91f35a5,UNKNOWN,generated
+output/categories_200,2084,Babymobilen,True,,83503e36d52af32e,UNKNOWN,generated
+output/categories_200,2100,Kindersloten,True,,437455bd179703fe,UNKNOWN,generated
+output/categories_200,2786,Baby autostoelaccessoires,True,,8f2524a1b7c359bd,UNKNOWN,generated
+output/categories_200,2099,Babydoekjes,True,,9cbe86f9951a2767,UNKNOWN,generated
+output/categories_200,2298,Badspeelgoed en stickers,True,,8ee3bf8d17972dfd,UNKNOWN,generated
+output/categories_200,4770,Babyknuffeldoekjes,True,,a70bdf0617b67ff1,UNKNOWN,generated
+output/categories_200,4382,Sabbelzakjes,True,,82dd32d99bc176cf,UNKNOWN,generated
+output/categories_200,3921,Babyspeenhouders,True,,13d468ae5b78cb44,UNKNOWN,generated
+output/categories_200,4364,Kinderwagenveiligheid,True,,e015aeb6c1a5e867,UNKNOWN,generated
+output/categories_200,8601,Accessoires voor borstkolven,True,,62205c8d0e5aab15,UNKNOWN,generated
+output/categories_200,5142,Babydraagzakaccessoires,True,,c89b203095d66826,UNKNOWN,generated
+output/categories_200,2617,Sterilisatieaccessoires,True,,8709e9ac49a7fdff,UNKNOWN,generated
+output/categories_200,9193,Baby anti-verlatings apparaten,True,,d3b6a0c2ca5acfa0,UNKNOWN,generated
+output/categories_200,3086,Sippy bekers,True,,a93469f5e9749345,UNKNOWN,generated
+output/categories_200,4997,Grondverf,True,,893fdb5c33912b5d,UNKNOWN,generated
+output/categories_200,7130,Massageoliën voor baby's,True,,894102e66822fd72,UNKNOWN,generated
+output/categories_200,1484,Verf op waterbasis,True,,825baac161b38d47,UNKNOWN,generated
+output/categories_200,4133,Zoogkompressen,True,,61e4b30ab515f6d0,UNKNOWN,generated
+output/categories_200,3907,Babyhanddoeken,True,,8dcc6f373422837a,UNKNOWN,generated
+output/categories_200,2618,Startsets babyvoeding,True,,ccd292e6dd0d03ff,UNKNOWN,generated
+output/categories_200,5307,Reinigingsmiddelen & ontvetters voor oppervlakvoorbereiding,True,,131772acd26f4f29,UNKNOWN,generated
+output/categories_200,5464,Drinkaccessoires voor peuters,True,,a1565c1ebba7621c,UNKNOWN,generated
+output/categories_200,7403,Kinderwagenplankjes,True,,4c237eb65f5a0ad9,UNKNOWN,generated
+output/categories_200,6539,Verfrollergrepen,True,,20c0ee98590456f8,UNKNOWN,generated
+output/categories_200,2083,Kinderzitjeonderstellen,True,,53d6788d856f11f6,UNKNOWN,generated
+output/categories_200,1692,Spenen,True,,924e9c935a3846e0,UNKNOWN,generated
+output/categories_200,2600,Borstvoedingaccessoires,True,,66e22d7f352216d8,UNKNOWN,generated
+output/categories_200,7134,Douchegels voor baby's,True,,18773945fda289ad,UNKNOWN,generated
+output/categories_200,8378,Kwast-/penseelkoppen,True,,e97a2e94a9683fdf,UNKNOWN,generated
+output/categories_200,4976,Babydekbedovertrekken,True,,f22e6354eedddc90,UNKNOWN,generated
+output/categories_200,4716,Autostoelverhogers,True,,4ac2d366a643395a,UNKNOWN,generated
+output/categories_200,5100,mortels,True,,afbdc0d7696eff68,UNKNOWN,generated
+output/categories_200,1425,Zuigflessen,True,,f0547fb474cc372d,UNKNOWN,generated
+output/categories_200,2609,Babyhuidverzorging,True,,a779c948e9c16358,UNKNOWN,generated
