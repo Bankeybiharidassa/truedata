@@ -1,0 +1,11 @@
+Catid,category,title_selected,concept_notes,primitives_used,path_hash,width,height,stroke_width,color_hex,validation_passed,source_icon
+1001,electronics,Electronics,downloaded for style thin,"path,path,path",34d4e361dea6ff8de7b247f6abb7e523855cdbf81551aa11d59f32017e409ff3,256,256,8,#E63B14,TRUE,https://api.iconify.design/flat-color-icons:electronics.svg
+1002,furniture,Furniture,downloaded for style thin,path,3e3b01cb7933e59d21664538ec94dd2ea451a5a3830d417c8d864a9d01b7c369,256,256,8,#E63B14,TRUE,https://api.iconify.design/mdi:table-furniture.svg
+1003,toys,Toys,downloaded for style thin,g,a57634d73f1251caa84ba3958944dea26bcdd6de6fe609765e14de81c204e9f5,256,256,8,#E63B14,TRUE,https://api.iconify.design/arcticons:automatoys.svg
+1004,books,Books,downloaded for style thin,"path,path,path,path,path,path,g",c464dc1fcdd5489811f616974627235f14b82c62a7d4ecf4bfd601d26c8c2b88,256,256,8,#E63B14,TRUE,https://api.iconify.design/openmoji:books.svg
+1005,clothing,Clothing,downloaded for style thin,path,face08b8175a122ffc8099f88be66692dd009719319234cb0aba2b2964f53765,256,256,8,#E63B14,TRUE,https://api.iconify.design/maki:clothing-store.svg
+1006,sports,Sports,downloaded for style thin,path,fda6bde30b252b3ba2f57ef651fbb2304a90522005626494811a51cee8155b70,256,256,8,#E63B14,TRUE,https://api.iconify.design/lineicons:sports.svg
+1007,beauty,Beauty,downloaded for style thin,path,6752ccc9d78ff45097367ee6085364b0f254524520eec40da73223ae41ab1060,256,256,8,#E63B14,TRUE,https://api.iconify.design/material-symbols:health-and-beauty.svg
+1008,automotive,Automotive,downloaded for style thin,g,cc9d1eb2b7aa9bd7377962d4dbcce8aeba13864069a5d2a4c734f1ba4bed8146,256,256,8,#E63B14,TRUE,https://api.iconify.design/hugeicons:automotive-battery-01.svg
+1009,garden,Garden,downloaded for style thin,path,dac1117b4a63b1b9fd7936dc7126efe971b3e61a4ba44181c772148accf6cab1,256,256,8,#E63B14,TRUE,https://api.iconify.design/material-symbols:garden-cart-outline-rounded.svg
+1010,kitchen,Kitchen,downloaded for style thin,path,093c1ab6e9bce599bb1e7ad7558c970d4df7881d3948a2f71f830121593feb8a,256,256,8,#E63B14,TRUE,https://api.iconify.design/material-symbols-light:kitchen-sharp.svg
