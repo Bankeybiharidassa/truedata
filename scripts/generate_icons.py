@@ -2,8 +2,9 @@
 """Download and restyle SVG icons for e-commerce categories.
 
 The script reads a CSV file describing category taxonomy rows and downloads an
-SVG for each row using the svgapi.com JSON API. Every icon is re-styled to the
-brand specification and written to ``<output>/<style>/<category>/<Catid>.svg``
+SVG for each row using the svgapi.com JSON API. Icons can either keep their
+source styling (the default "classic" variant) or be recoloured according to a
+predefined style and are written to ``<output>/<style>/<category>/<Catid>.svg``
 alongside a ``manifest.csv`` with metadata useful for validation.
 
 The selected icon for a category is deterministic: a SHA256 hash of ``Catid``
@@ -18,7 +19,7 @@ import os
 import re
 import sys
 from pathlib import Path
-from typing import Dict, Iterable, List, Tuple
+from typing import Any, Dict, Iterable, List, Tuple
 
 import requests
 import xml.etree.ElementTree as ET
@@ -33,11 +34,32 @@ from taxonomy.synonyms import build_queries  # noqa: E402
 
 
 STYLE_VARIANTS = {
-    "classic": {"stroke_color": "#E63B14", "stroke_width": 12},
-    "thin": {"stroke_color": "#E63B14", "stroke_width": 8},
-    "thick": {"stroke_color": "#E63B14", "stroke_width": 16},
-    "blue": {"stroke_color": "#004165", "stroke_width": 12},
-    "mono": {"stroke_color": "#000000", "stroke_width": 12},
+    "classic": {"preserve_source_style": True},
+    "brand": {
+        "stroke_color": "#E63B14",
+        "stroke_width": 12,
+        "fill": "none",
+    },
+    "thin": {
+        "stroke_color": "#E63B14",
+        "stroke_width": 8,
+        "fill": "none",
+    },
+    "thick": {
+        "stroke_color": "#E63B14",
+        "stroke_width": 16,
+        "fill": "none",
+    },
+    "blue": {
+        "stroke_color": "#004165",
+        "stroke_width": 12,
+        "fill": "none",
+    },
+    "mono": {
+        "stroke_color": "#000000",
+        "stroke_width": 12,
+        "fill": "none",
+    },
 }
 
 SVG_NS = "http://www.w3.org/2000/svg"
@@ -200,23 +222,48 @@ def restyle_svg(svg_data: str, params: dict) -> Tuple[str, List[str], str]:
         view_box = f"0 0 {w} {h}"
     scale = 256 / max(w, h)
 
+    preserve_style = params.get("preserve_source_style", False)
     svg_attrib = {
         "xmlns": SVG_NS,
         "viewBox": "0 0 256 256",
         "width": "256",
         "height": "256",
-        "stroke": params["stroke_color"],
-        "stroke-width": str(params["stroke_width"]),
-        "stroke-linecap": "round",
-        "stroke-linejoin": "round",
-        "fill": "none",
     }
+    if preserve_style:
+        if params.get("stroke_color"):
+            svg_attrib["stroke"] = params["stroke_color"]
+        if params.get("stroke_width"):
+            svg_attrib["stroke-width"] = str(params["stroke_width"])
+        if params.get("stroke_linecap"):
+            svg_attrib["stroke-linecap"] = params["stroke_linecap"]
+        if params.get("stroke_linejoin"):
+            svg_attrib["stroke-linejoin"] = params["stroke_linejoin"]
+        if params.get("fill") is not None:
+            svg_attrib["fill"] = params["fill"]
+    else:
+        stroke_color = params.get("stroke_color", "#E63B14")
+        stroke_width = params.get("stroke_width", 12)
+        svg_attrib.update(
+            {
+                "stroke": stroke_color,
+                "stroke-width": str(stroke_width),
+                "stroke-linecap": params.get("stroke_linecap", "round"),
+                "stroke-linejoin": params.get("stroke_linejoin", "round"),
+            }
+        )
+        fill_value = params.get("fill", "none")
+        if fill_value is not None:
+            svg_attrib["fill"] = fill_value
     root = ET.Element("svg", svg_attrib)
     g = ET.SubElement(root, "g", {"transform": f"scale({scale})"})
     primitives: List[str] = []
     for child in list(src_root):
-        for attr in ["stroke", "fill", "style", "class", "id"]:
-            child.attrib.pop(attr, None)
+        if preserve_style:
+            for attr in ["class", "id"]:
+                child.attrib.pop(attr, None)
+        else:
+            for attr in ["stroke", "fill", "style", "class", "id"]:
+                child.attrib.pop(attr, None)
         primitives.append(child.tag.split("}")[-1])
         g.append(child)
     shapes_sig = element_signature(g)
@@ -260,7 +307,7 @@ def main():
         rows = list(csv.DictReader(f))
 
     requested_styles: Iterable[str] = [s.strip() for s in args.styles.split(',') if s.strip()]
-    styles: Dict[str, Dict[str, int]] = {}
+    styles: Dict[str, Dict[str, Any]] = {}
     for style in requested_styles:
         if style not in STYLE_VARIANTS:
             raise SystemExit(f"Unknown style variant '{style}'. Available: {', '.join(STYLE_VARIANTS)}")
@@ -271,6 +318,8 @@ def main():
     logging.info("Generating icons for %d categories (%s)", len(rows), ", ".join(styles))
 
     for style_name, params in styles.items():
+        style_color = params.get('stroke_color')
+        style_stroke_width = params.get('stroke_width')
         style_dir = out_root / style_name
         style_dir.mkdir(parents=True, exist_ok=True)
         manifest_rows = []
@@ -296,8 +345,8 @@ def main():
                     'path_hash': '',
                     'width': 0,
                     'height': 0,
-                    'stroke_width': params['stroke_width'],
-                    'color_hex': params['stroke_color'],
+                    'stroke_width': style_stroke_width if style_stroke_width is not None else '',
+                    'color_hex': style_color or '',
                     'validation_passed': 'FALSE',
                     'source_icon': '',
                 })
@@ -316,8 +365,8 @@ def main():
                     'path_hash': '',
                     'width': 0,
                     'height': 0,
-                    'stroke_width': params['stroke_width'],
-                    'color_hex': params['stroke_color'],
+                    'stroke_width': style_stroke_width if style_stroke_width is not None else '',
+                    'color_hex': style_color or '',
                     'validation_passed': 'FALSE',
                     'source_icon': source_url,
                 })
@@ -338,8 +387,8 @@ def main():
                 'path_hash': path_hash,
                 'width': 256,
                 'height': 256,
-                'stroke_width': params['stroke_width'],
-                'color_hex': params['stroke_color'],
+                'stroke_width': style_stroke_width if style_stroke_width is not None else '',
+                'color_hex': style_color or '',
                 'validation_passed': 'TRUE',
                 'source_icon': source_url,
             })
