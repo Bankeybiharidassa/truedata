@@ -16,6 +16,8 @@
 
 - Brand color palette and typography captured in style.md (primary #E63B14, secondary #004165, text #5E6A71, font Source Sans Pro).
 - `generate_icons.py` can create five style variants per category for test evaluation.
+- `validate_outputs.py` produces a consolidated CSV report with style checks,
+  duplicate-geometry detection and basic semantic hints.
 
 ## Items Needing Clarification
 - Confirm whether an external storage solution (e.g., Google Drive) is required if repository artifacts approach GitHub's 100 MiB file limit.
