@@ -2,7 +2,7 @@
 """Verify generated SVG icons and manifests.
 
 Checks viewBox, stroke attributes, fill, and path hash for each icon.
-Usage: python scripts/verify_icons.py output/test
+Usage: python scripts/verify_icons.py output/test2
 """
 import csv
 import hashlib
@@ -12,8 +12,10 @@ import xml.etree.ElementTree as ET
 
 SVG_NS = "http://www.w3.org/2000/svg"
 
+
 def element_signature(el):
-    return el.tag.split('}')[-1] + ''.join(f'{k}={el.get(k)}' for k in sorted(el.attrib))
+    sig = el.tag.split('}')[-1] + ''.join(f'{k}={el.get(k)}' for k in sorted(el.attrib))
+    return sig + ''.join(element_signature(c) for c in el)
 
 def verify_style(style_dir: str) -> int:
     manifest_path = os.path.join(style_dir, "manifest.csv")
@@ -21,7 +23,7 @@ def verify_style(style_dir: str) -> int:
         reader = csv.DictReader(mf)
         count = 0
         for row in reader:
-            svg_path = os.path.join(style_dir, f"{row['Catid']}.svg")
+            svg_path = os.path.join(style_dir, row['category'], f"{row['Catid']}.svg")
             tree = ET.parse(svg_path)
             root = tree.getroot()
             assert root.tag == f"{{{SVG_NS}}}svg", f"Root element is not svg in {svg_path}"
@@ -32,7 +34,9 @@ def verify_style(style_dir: str) -> int:
             assert root.get("stroke-linecap") == "round"
             assert root.get("stroke-linejoin") == "round"
             assert root.get("fill") == "none"
-            shape_sig = ''.join(element_signature(child) for child in root)
+            g = root.find(f"{{{SVG_NS}}}g")
+            sig_source = g if g is not None else root
+            shape_sig = element_signature(sig_source)
             path_hash = hashlib.sha256(shape_sig.encode()).hexdigest()
             assert path_hash == row['path_hash'], f"Path hash mismatch for {svg_path}"
             count += 1
