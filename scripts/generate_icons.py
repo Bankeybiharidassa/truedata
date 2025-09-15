@@ -119,7 +119,9 @@ def main():
                 svg_content, primitives, path_hash = restyle_svg(svg_raw, params)
             else:
                 # simple placeholder circle if search fails
-                placeholder = '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg>'
+                # radius varies deterministically with catid to keep geometry unique
+                radius = 8 + int(hashlib.sha256(catid.encode()).hexdigest(), 16) % 8
+                placeholder = f'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="{radius}"/></svg>'
                 svg_content, primitives, path_hash = restyle_svg(placeholder, params)
                 source_url = 'generated'
 
