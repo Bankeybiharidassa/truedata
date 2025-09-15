@@ -63,4 +63,48 @@ The system processes CSV input files and outputs clean, validated SVGs plus a ma
 
 - Process **8 CSVs**, one by one.  
 - CSV schema:  
+Catid, Root category, Sub category, Sub-sub category, Sub-sub-sub category, Sub-sub-sub-sub category, Sub-sub-sub-sub-sub category
 
+- Output per CSV:  
+- `{Catid}.svg` files  
+- `manifest.csv` with columns:  
+
+  ```
+  Catid, title_selected, concept_notes, primitives_used, path_hash, width, height, stroke_width, color_hex, validation_passed, source_icon
+  ```
+
+- Package results as a **ZIP**: all SVGs + `manifest.csv`.
+
+---
+
+## Assistant Workflow (Per Row)
+
+1. Determine subject (lowest non-empty category).  
+2. Search SVGrepo and select icon (or generate).  
+3. Restyle into spec.  
+4. Validate:  
+ - Correct viewBox & strokes  
+ - No forbidden elements  
+ - Unique path-hash within batch  
+ - `source_icon` filled  
+ - `validation_passed=TRUE`
+
+---
+
+## Output
+
+- For each CSV:  
+- One `.zip` containing all `{Catid}.svg` + `manifest.csv`.  
+- No extra text, no JSON.
+
+---
+
+## Sanity Checklist
+
+- [ ] `viewBox="0 0 256 256"`  
+- [ ] 2–6 vector primitives only  
+- [ ] Stroke `12`, round caps & joins, color `#E63B14`  
+- [ ] `fill="none"`  
+- [ ] Geometry unique within batch  
+- [ ] Filename = `Catid.svg`  
+- [ ] Manifest line includes `source_icon` + `validation_passed=TRUE`
