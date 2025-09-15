@@ -107,6 +107,21 @@ Catid, Root category, Sub category, Sub-sub category, Sub-sub-sub category, Sub-
 
 Icons are created with a transparent background. To apply or remove a solid background color across all SVGs later, use the helper script documented in [background_update_procedure.md](background_update_procedure.md).
 
+## Test Run and Style Variants
+
+Use `scripts/generate_icons.py` to create sample icons for evaluation across multiple styles.
+
+```
+python scripts/generate_icons.py --csv categories_sample.csv --out output/test
+```
+
+Five style folders will appear under `output/test`, each containing generated `{Catid}.svg` files and a `manifest.csv`.
+To validate the output, run:
+
+```
+python scripts/verify_icons.py output/test
+```
+
 ---
 
 ## Sanity Checklist

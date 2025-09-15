@@ -1,0 +1,11 @@
+Catid,title_selected,concept_notes,primitives_used,path_hash,width,height,stroke_width,color_hex,validation_passed,source_icon
+1001,Electronics,Generated for style mono,"line,line",87027488dbc49dbdec1c6c0da135e669a84425ccc54f1bf977eca4765090ad76,256,256,12,#000000,TRUE,generated
+1002,Furniture,Generated for style mono,"rect,rect",0b2c8ccf0d2da2f274589e1cc192a10c0b35cace4de716a9729371c26d440798,256,256,12,#000000,TRUE,generated
+1003,Toys,Generated for style mono,"line,line",2672482ebafe076ccc47051566a1167cb6fa5f9ccb51524f47f7b9f1e9913f88,256,256,12,#000000,TRUE,generated
+1004,Books,Generated for style mono,"circle,line",ee83592fcb57bb55f7aad1e6b7ec413117990141c639fc6f4eb0f7ec10dc9893,256,256,12,#000000,TRUE,generated
+1005,Clothing,Generated for style mono,"circle,line",a53b480da2281eb4e57dfb4fba6d38b9b5d08ca4ddbdd399d24c965172424132,256,256,12,#000000,TRUE,generated
+1006,Sports,Generated for style mono,"circle,rect",4b60b13541cbfef53f4b27d3293f387ed5acae4b4b0e5d9165aa995b9fc5bfca,256,256,12,#000000,TRUE,generated
+1007,Beauty,Generated for style mono,"line,line",51f3834c2575a0e7944d1d287288925d9662a5c42bf7ad126021c575c7e08a69,256,256,12,#000000,TRUE,generated
+1008,Automotive,Generated for style mono,"rect,rect",65a849b28c00aca2f6222d067b5d1b978110b49eba14368bdbaaefa4c5730d01,256,256,12,#000000,TRUE,generated
+1009,Garden,Generated for style mono,"circle,rect",a080adc3c51850981587a23c62e8895d432deca62eaf47ee2061749445ec02f2,256,256,12,#000000,TRUE,generated
+1010,Kitchen,Generated for style mono,"rect,line",95d03badea05f54ec4684a5acc1cc4eff120012b073006197801b524537b72fb,256,256,12,#000000,TRUE,generated

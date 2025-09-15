@@ -1,0 +1,11 @@
+Catid,title_selected,concept_notes,primitives_used,path_hash,width,height,stroke_width,color_hex,validation_passed,source_icon
+1001,Electronics,Generated for style thick,"line,circle",76553d13bdf616d3472f4ccb637a950f382d76930f3048115354a0b20187af87,256,256,16,#E63B14,TRUE,generated
+1002,Furniture,Generated for style thick,"circle,circle",70bfcd0dff7dcf1276a4a2d6f37388861a5ae780c2065f6469322a835ab97287,256,256,16,#E63B14,TRUE,generated
+1003,Toys,Generated for style thick,"line,rect",ee5755d9ff85a48c2e857bf128de639dcd028de57fcff92266a871ccc0065c5a,256,256,16,#E63B14,TRUE,generated
+1004,Books,Generated for style thick,"line,rect",6a066706cfce44c413e707a368b5dc4107f296170047ac32b35bd8c57b4179a6,256,256,16,#E63B14,TRUE,generated
+1005,Clothing,Generated for style thick,"line,circle",0a6418f851de332d5d08fcb2a9094ea74fd85aaa4d3115abb77acec996b806c8,256,256,16,#E63B14,TRUE,generated
+1006,Sports,Generated for style thick,"circle,line",f572d957c5d7c3080f173b0ae4b28111c9cbfe5e020e0e87dd72eb5e77f41a89,256,256,16,#E63B14,TRUE,generated
+1007,Beauty,Generated for style thick,"circle,rect",89dab45afb606b333a990c8c59d72e841d180f4215bd9c012b4b214ed9029c90,256,256,16,#E63B14,TRUE,generated
+1008,Automotive,Generated for style thick,"rect,line",42d3ed4cd589d8ae5e63c04ec7bf21e840d5d39da641b758476519acd35b06a3,256,256,16,#E63B14,TRUE,generated
+1009,Garden,Generated for style thick,"rect,rect",cd4875586150f9e597219346e82b8332c8080f67ed598998f8873fe6fee2af43,256,256,16,#E63B14,TRUE,generated
+1010,Kitchen,Generated for style thick,"line,circle",7abdfee56f409fdfbe8adfb313a7bbdcef04836b5171681a80544ba22267eb3f,256,256,16,#E63B14,TRUE,generated
