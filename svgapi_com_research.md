@@ -55,3 +55,10 @@ Using SVGAPI can replace manual scraping from SVGrepo:
 
 This API streamlines search and collection by providing structured metadata and direct SVG downloads, eliminating HTML parsing.
 
+## Integration Status
+- `scripts/generate_icons.py` now uses the `list` endpoint with deterministic
+  result selection. The script accepts an explicit `--api-key` argument (or
+  `SVGAPI_API_KEY` environment variable) and records diagnostics to a
+  `generation.log` file in the output directory. A successful dry run against
+  `categories_25.csv` produced 25 classic-style icons in `output/test4`.
+

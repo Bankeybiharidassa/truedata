@@ -111,13 +111,20 @@ Icons are created with a transparent background. To apply or remove a solid back
 
 ## Test Run and Style Variants
 
-Use `scripts/generate_icons.py` to create sample icons for evaluation across multiple styles.
+Use `scripts/generate_icons.py` to create sample icons for evaluation using the
+[svgapi.com](https://svgapi.com) catalogue. By default it outputs the "classic"
+brand style; provide `--styles` with a comma-separated list to render multiple
+variants in one run.
 
 ```
-python scripts/generate_icons.py --csv categories_sample.csv --out output/test
+python scripts/generate_icons.py --csv categories_sample.csv --out output/test --styles classic
 ```
 
-Five style folders will appear under `output/test`, each containing generated `{Catid}.svg` files and a `manifest.csv`.
+The script writes a `generation.log` file inside the requested output folder so
+you can review API queries and download issues. Each requested style appears as
+its own directory containing the generated `{Catid}.svg` files and a
+`manifest.csv`.
+
 To validate the output, run:
 
 ```

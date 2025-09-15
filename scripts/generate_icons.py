@@ -1,23 +1,36 @@
 #!/usr/bin/env python3
-"""Download SVG icons for e-commerce categories with style variants.
+"""Download and restyle SVG icons for e-commerce categories.
 
-Reads a CSV of categories and downloads an SVG for each category using the
-Iconify API. Icons are re-styled according to style variants and stored in
-``output/test2/<style>/<category>/<Catid>.svg`` with a ``manifest.csv`` per
-style.
+The script reads a CSV file describing category taxonomy rows and downloads an
+SVG for each row using the svgapi.com JSON API. Every icon is re-styled to the
+brand specification and written to ``<output>/<style>/<category>/<Catid>.svg``
+alongside a ``manifest.csv`` with metadata useful for validation.
 
-The selected icon for a category is deterministic: we hash the ``Catid`` and
-use it to pick one of the search results.
+The selected icon for a category is deterministic: a SHA256 hash of ``Catid``
+is used to pick one item from the API search results.
 """
 
 import argparse
 import csv
 import hashlib
+import logging
 import os
-from typing import Tuple, List
+import re
+import sys
+from pathlib import Path
+from typing import Dict, Iterable, List, Tuple
 
 import requests
 import xml.etree.ElementTree as ET
+
+ROOT = Path(__file__).resolve().parents[1]
+SRC_PATH = ROOT / "src"
+if str(SRC_PATH) not in sys.path:
+    sys.path.append(str(SRC_PATH))
+
+from taxonomy.resolver import deepest_category  # noqa: E402
+from taxonomy.synonyms import build_queries  # noqa: E402
+
 
 STYLE_VARIANTS = {
     "classic": {"stroke_color": "#E63B14", "stroke_width": 12},
@@ -28,6 +41,29 @@ STYLE_VARIANTS = {
 }
 
 SVG_NS = "http://www.w3.org/2000/svg"
+SVGAPI_LIST_URL = "https://api.svgapi.com/v1/{key}/list/"
+
+
+def configure_logging(out_dir: Path, level: str) -> Path:
+    """Configure logging to both STDOUT and ``generation.log`` in ``out_dir``."""
+
+    out_dir.mkdir(parents=True, exist_ok=True)
+    log_path = out_dir / "generation.log"
+
+    console_level = getattr(logging, level.upper(), logging.INFO)
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(console_level)
+
+    file_handler = logging.FileHandler(log_path, mode="w", encoding="utf-8")
+    file_handler.setLevel(logging.INFO)
+
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s [%(levelname)s] %(message)s",
+        handlers=[console_handler, file_handler],
+    )
+    logging.info("Logging initialised at %s", log_path)
+    return log_path
 
 
 def element_signature(el: ET.Element) -> str:
@@ -38,42 +74,118 @@ def element_signature(el: ET.Element) -> str:
 
 
 def slugify(name: str) -> str:
-    return name.lower().replace(" ", "_")
+    slug = re.sub(r"[^a-z0-9]+", "_", name.lower())
+    slug = re.sub(r"_+", "_", slug).strip("_")
+    return slug or "category"
 
 
-def fetch_icon_svg(category: str, catid: str) -> Tuple[str, str]:
-    """Return raw SVG data and source URL for a category.
+def iter_search_queries(category: str) -> List[str]:
+    """Generate prioritized search queries for ``category``."""
 
-    If the lookup or download fails, an empty tuple is returned and the
-    reason is printed so callers can record why no public icon was used.
+    queries: List[str] = []
+    for candidate in build_queries(category):
+        sanitized = candidate.strip()
+        if sanitized and sanitized not in queries:
+            queries.append(sanitized)
+
+    # Add a simplified form without punctuation to avoid API parse errors.
+    simplified = re.sub(r"[^a-z0-9 ]+", " ", category.lower()).strip()
+    if simplified and simplified not in queries:
+        queries.append(simplified)
+
+    if category not in queries:
+        queries.append(category)
+
+    lower = category.lower()
+    fallback_terms: List[str] = []
+    if "baby" in lower:
+        fallback_terms.extend(["baby care", "baby icon", "baby"])
+    if "kind" in lower or "child" in lower:
+        fallback_terms.extend(["child icon", "children toys"])
+
+    for term in fallback_terms:
+        if term not in queries:
+            queries.append(term)
+
+    universal_fallbacks = ["baby icon", "baby"]
+    for term in universal_fallbacks:
+        if term not in queries:
+            queries.append(term)
+    return queries
+
+
+def fetch_icon_svg(
+    category: str,
+    catid: str,
+    session: requests.Session,
+    api_key: str,
+    limit: int,
+) -> Tuple[str, str, str]:
+    """Return SVG data, source URL and title for ``category``.
+
+    Returns empty strings when the lookup fails so the caller can record
+    metadata about the missing public icon.
     """
-    try:
-        search = requests.get(
-            "https://api.iconify.design/search",
-            params={"query": category, "limit": 50},
-            timeout=10,
-        )
-        search.raise_for_status()
-    except requests.RequestException as exc:  # network or HTTP error
-        print(f"[iconify] search failed for '{category}': {exc}")
-        return "", ""
 
-    icons = search.json().get("icons", [])
-    if not icons:
-        print(f"[iconify] no icons found for '{category}'")
-        return "", ""
+    search_url = SVGAPI_LIST_URL.format(key=api_key)
+    queries = iter_search_queries(category)
+    for query in queries:
+        try:
+            response = session.get(
+                search_url,
+                params={"search": query, "limit": limit},
+                timeout=10,
+            )
+            response.raise_for_status()
+        except requests.RequestException as exc:
+            logging.warning(
+                "[svgapi] search failed for '%s' (query '%s'): %s",
+                category,
+                query,
+                exc,
+            )
+            continue
 
-    idx = int(hashlib.sha256(catid.encode()).hexdigest(), 16) % len(icons)
-    icon_name = icons[idx]
-    svg_url = f"https://api.iconify.design/{icon_name}.svg"
-    try:
-        svg_resp = requests.get(svg_url, timeout=10)
-        svg_resp.raise_for_status()
-    except requests.RequestException as exc:
-        print(f"[iconify] download failed for '{svg_url}': {exc}")
-        return "", ""
+        try:
+            payload = response.json()
+        except ValueError as exc:
+            logging.warning(
+                "[svgapi] invalid JSON for '%s' (query '%s'): %s",
+                category,
+                query,
+                exc,
+            )
+            continue
 
-    return svg_resp.text, svg_url
+        icons = payload.get("icons") or []
+        if not icons:
+            logging.info("[svgapi] no icons found for '%s' (query '%s')", category, query)
+            continue
+
+        idx = int(hashlib.sha256(catid.encode()).hexdigest(), 16) % len(icons)
+        selected = icons[idx]
+        svg_url = selected.get("url", "")
+        if not svg_url:
+            logging.warning(
+                "[svgapi] missing SVG URL for '%s' (query '%s')",
+                category,
+                query,
+            )
+            continue
+
+        try:
+            svg_resp = session.get(svg_url, timeout=10)
+            svg_resp.raise_for_status()
+        except requests.RequestException as exc:
+            logging.warning("[svgapi] download failed for '%s': %s", svg_url, exc)
+            continue
+
+        title = selected.get("title") or selected.get("slug") or category
+        logging.info("[svgapi] using '%s' for '%s' via query '%s'", title, category, query)
+        return svg_resp.text, svg_url, title
+
+    logging.info("[svgapi] no icons found for '%s' after trying %d queries", category, len(queries))
+    return "", "", ""
 
 
 def restyle_svg(svg_data: str, params: dict) -> Tuple[str, List[str], str]:
@@ -101,10 +213,10 @@ def restyle_svg(svg_data: str, params: dict) -> Tuple[str, List[str], str]:
     }
     root = ET.Element("svg", svg_attrib)
     g = ET.SubElement(root, "g", {"transform": f"scale({scale})"})
-    primitives = []
+    primitives: List[str] = []
     for child in list(src_root):
-        child.attrib.pop("stroke", None)
-        child.attrib.pop("fill", None)
+        for attr in ["stroke", "fill", "style", "class", "id"]:
+            child.attrib.pop(attr, None)
         primitives.append(child.tag.split("}")[-1])
         g.append(child)
     shapes_sig = element_signature(g)
@@ -117,22 +229,64 @@ def main():
     parser = argparse.ArgumentParser(description="Download SVG icons with style variants")
     parser.add_argument("--csv", default="categories_sample.csv", help="Input CSV file")
     parser.add_argument("--out", default="output/test2", help="Output directory root")
+    parser.add_argument(
+        "--styles",
+        default="classic",
+        help="Comma-separated list of style variants to generate",
+    )
+    parser.add_argument(
+        "--api-key",
+        default=os.environ.get("SVGAPI_API_KEY", "Ty5WcDa63E"),
+        help="SVGAPI key (defaults to example key or SVGAPI_API_KEY env var)",
+    )
+    parser.add_argument(
+        "--search-limit",
+        type=int,
+        default=50,
+        help="Number of results to request per API search",
+    )
+    parser.add_argument(
+        "--log-level",
+        default=os.environ.get("ICON_LOG_LEVEL", "INFO"),
+        help="Logging level (DEBUG, INFO, WARNING, ERROR)",
+    )
     args = parser.parse_args()
 
+    out_root = Path(args.out)
+    log_path = configure_logging(out_root, args.log_level)
+
+    logging.info("Reading categories from %s", args.csv)
     with open(args.csv, newline='', encoding='utf-8') as f:
         rows = list(csv.DictReader(f))
 
-    for style_name, params in STYLE_VARIANTS.items():
-        style_dir = os.path.join(args.out, style_name)
-        os.makedirs(style_dir, exist_ok=True)
+    requested_styles: Iterable[str] = [s.strip() for s in args.styles.split(',') if s.strip()]
+    styles: Dict[str, Dict[str, int]] = {}
+    for style in requested_styles:
+        if style not in STYLE_VARIANTS:
+            raise SystemExit(f"Unknown style variant '{style}'. Available: {', '.join(STYLE_VARIANTS)}")
+        styles[style] = STYLE_VARIANTS[style]
+
+    session = requests.Session()
+    logging.info("Writing logs to %s", log_path)
+    logging.info("Generating icons for %d categories (%s)", len(rows), ", ".join(styles))
+
+    for style_name, params in styles.items():
+        style_dir = out_root / style_name
+        style_dir.mkdir(parents=True, exist_ok=True)
         manifest_rows = []
         for row in rows:
             catid = row['Catid']
-            category_name = row['Sub category'] or row['Root category']
+            category_name = deepest_category(row) or row['Root category'] or 'Unknown'
             category_slug = slugify(category_name)
-            svg_raw, source_url = fetch_icon_svg(category_name, catid)
+            logging.debug("Processing %s (%s) for style %s", catid, category_name, style_name)
+            svg_raw, source_url, icon_title = fetch_icon_svg(
+                category_name,
+                catid,
+                session,
+                args.api_key,
+                args.search_limit,
+            )
             if not svg_raw:
-                # No public icon available – record the failure and skip file output
                 manifest_rows.append({
                     'Catid': catid,
                     'category': category_slug,
@@ -149,11 +303,29 @@ def main():
                 })
                 continue
 
-            svg_content, primitives, path_hash = restyle_svg(svg_raw, params)
+            try:
+                svg_content, primitives, path_hash = restyle_svg(svg_raw, params)
+            except ET.ParseError as exc:
+                logging.warning("Failed to parse SVG for %s (%s): %s", catid, source_url, exc)
+                manifest_rows.append({
+                    'Catid': catid,
+                    'category': category_slug,
+                    'title_selected': category_name,
+                    'concept_notes': 'svg parsing failed',
+                    'primitives_used': '',
+                    'path_hash': '',
+                    'width': 0,
+                    'height': 0,
+                    'stroke_width': params['stroke_width'],
+                    'color_hex': params['stroke_color'],
+                    'validation_passed': 'FALSE',
+                    'source_icon': source_url,
+                })
+                continue
 
-            cat_dir = os.path.join(style_dir, category_slug)
-            os.makedirs(cat_dir, exist_ok=True)
-            file_path = os.path.join(cat_dir, f"{catid}.svg")
+            cat_dir = style_dir / category_slug
+            cat_dir.mkdir(parents=True, exist_ok=True)
+            file_path = cat_dir / f"{catid}.svg"
             with open(file_path, 'w', encoding='utf-8') as sf:
                 sf.write(svg_content)
 
@@ -161,7 +333,7 @@ def main():
                 'Catid': catid,
                 'category': category_slug,
                 'title_selected': category_name,
-                'concept_notes': f'downloaded for style {style_name}',
+                'concept_notes': f"downloaded from svgapi ({icon_title})",
                 'primitives_used': ','.join(primitives),
                 'path_hash': path_hash,
                 'width': 256,
@@ -172,7 +344,7 @@ def main():
                 'source_icon': source_url,
             })
 
-        manifest_path = os.path.join(style_dir, 'manifest.csv')
+        manifest_path = style_dir / 'manifest.csv'
         fieldnames = [
             'Catid', 'category', 'title_selected', 'concept_notes', 'primitives_used',
             'path_hash', 'width', 'height', 'stroke_width', 'color_hex',
@@ -182,6 +354,7 @@ def main():
             writer = csv.DictWriter(mf, fieldnames=fieldnames)
             writer.writeheader()
             writer.writerows(manifest_rows)
+        logging.info("Wrote %s", manifest_path)
 
 
 if __name__ == "__main__":
