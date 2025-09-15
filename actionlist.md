@@ -14,5 +14,7 @@
 - GitHub accepts `.svg` files but blocks files larger than 100 MiB; ensure individual files stay below this limit.
 - For web research, retrieve pages using `curl` with the `https://r.jina.ai/` prefix (or text-based tools like `lynx`) to access clean text for citation.
 
+- Brand color palette and typography captured in style.md (primary #E63B14, secondary #004165, text #5E6A71, font Source Sans Pro).
+
 ## Items Needing Clarification
 - Confirm whether an external storage solution (e.g., Google Drive) is required if repository artifacts approach GitHub's 100 MiB file limit.

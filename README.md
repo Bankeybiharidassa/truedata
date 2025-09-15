@@ -5,6 +5,10 @@ The system processes CSV input files and outputs clean, validated SVGs plus a ma
 
 ---
 
+## Brand Style
+
+See [style.md](style.md) for the site's color palette and typography. Icons use the primary brand color (#E63B14).
+
 ## System Behavior
 
 - Input: one CSV at a time.  
