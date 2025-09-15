@@ -193,6 +193,12 @@ If we never see `candidates>0` or a `chosen=URL`, the search step is **broken or
 * Implement A–D, add logs, run on a 20-row sample, attach new `manifest.csv` and 3 representative SVGs to PR for review.
 * If queries still fail, add a small **synonym map** for common taxonomy terms (e.g., "fasteners" → "screw bolt nut").
 
+## 13) Public icon access test (2024-08-??)
+
+- `scripts/generate_icons.py` initially failed because the `requests` package was missing.
+- After installing `requests`, Iconify API calls succeeded and produced manifest entries with public icon URLs.
+- Direct requests to `svgrepo.com` failed with `ProxyError('Tunnel connection failed: 403 Forbidden')`.
+
 ---
 
 *Prepared for Codex/GitHub integration – paste into an issue or PR as reference.*
