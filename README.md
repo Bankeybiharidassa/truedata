@@ -97,9 +97,15 @@ Catid, Root category, Sub category, Sub-sub category, Sub-sub-sub category, Sub-
 
 ## Output
 
-- For each CSV:  
-- One directory "output" containing all `{Catid}.svg` + `manifest.csv`.  
+- For each CSV:
+- One directory "output" containing all `{Catid}.svg` + `manifest.csv`.
 - No extra text, no JSON.
+
+---
+
+## Background Updates
+
+Icons are created with a transparent background. To apply or remove a solid background color across all SVGs later, use the helper script documented in [background_update_procedure.md](background_update_procedure.md).
 
 ---
 
