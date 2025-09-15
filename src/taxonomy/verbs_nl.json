@@ -1,0 +1,5 @@
+{
+  "boren": {"lemma": "boren", "nouns": ["boor", "kolomboor", "accuboormachine"], "synonyms": ["gat", "boring"]},
+  "schroeven": {"lemma": "schroeven", "nouns": ["schroef", "bout", "bevestiger"], "synonyms": ["vastzetten", "aandraaien"]},
+  "snijden": {"lemma": "snijden", "nouns": ["mes", "snijder", "schaar"], "synonyms": ["afsnijden", "trimmen"]}
+}
