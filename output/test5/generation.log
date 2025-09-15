@@ -1,0 +1,253 @@
+2025-09-15 22:58:39,917 [INFO] Reading categories from categories_250.csv
+2025-09-15 22:58:39,918 [INFO] Generating icons for 250 categories
+2025-09-15 22:58:39,921 [INFO] Generated 1980 (Baby & kind) with template icon_baby_swaddle
+2025-09-15 22:58:39,921 [INFO] Generated 6516 (Activiteitsbenodigdheden voor baby's) with template icon_baby_swaddle
+2025-09-15 22:58:39,922 [INFO] Generated 5967 (Accessoires voor babymobiels) with template icon_baby_mobile
+2025-09-15 22:58:39,923 [INFO] Generated 8192 (Accessoires voor babyschommelstoelen & wipstoelen) with template icon_baby_swing
+2025-09-15 22:58:39,923 [INFO] Generated 6856 (Attributen voor babymijlpalen) with template icon_milestone
+2025-09-15 22:58:39,924 [INFO] Generated 2096 (Babyjumpers) with template icon_baby_jumper
+2025-09-15 22:58:39,924 [INFO] Generated 2077 (Babyloopstoelen) with template icon_baby_walker
+2025-09-15 22:58:39,925 [INFO] Generated 2084 (Babymobilen) with template icon_baby_mobile
+2025-09-15 22:58:39,925 [INFO] Generated 8611 (Babyschommelstoelen) with template icon_baby_swing
+2025-09-15 22:58:39,926 [INFO] Generated 2409 (Babyspeelrekken en -matten) with template icon_play_arch
+2025-09-15 22:58:39,927 [INFO] Generated 2078 (Babyswings) with template icon_baby_swing
+2025-09-15 22:58:39,927 [INFO] Generated 3660 (Box accessoires) with template icon_play_arch
+2025-09-15 22:58:39,928 [INFO] Generated 4367 (Hangend babyspeelgoed) with template icon_baby_mobile
+2025-09-15 22:58:39,929 [INFO] Generated 3847 (Kindermeetlatten) with template icon_milestone
+2025-09-15 22:58:39,929 [INFO] Generated 2075 (Playpennen) with template icon_play_arch
+2025-09-15 22:58:39,929 [INFO] Generated 2530 (Rammelaars) with template icon_rattle
+2025-09-15 22:58:39,930 [INFO] Generated 2094 (Wipstoeltjes) with template icon_baby_swing
+2025-09-15 22:58:39,931 [INFO] Generated 1697 (Baby cadeausets) with template icon_gift
+2025-09-15 22:58:39,931 [INFO] Generated 1988 (Babybadjes & -potjes) with template icon_bathtub
+2025-09-15 22:58:39,931 [INFO] Generated 9206 (Accessoires voor neuszuigers voor baby's) with template icon_aspirator
+2025-09-15 22:58:39,932 [INFO] Generated 7123 (Baby-huidverzorgingsproducten) with template icon_bottle
+2025-09-15 22:58:39,932 [INFO] Generated 5145 (Babybubbelbaden) with template icon_bathtub
+2025-09-15 22:58:39,933 [INFO] Generated 5146 (Babyzeep) with template icon_bottle
+2025-09-15 22:58:39,933 [INFO] Generated 5084 (Badsets en huidverzorgingssets voor baby's) with template icon_bathtub
+2025-09-15 22:58:39,934 [INFO] Generated 7127 (Bodylotions en -melk voor baby's) with template icon_bottle
+2025-09-15 22:58:39,935 [INFO] Generated 7129 (Bodyoliën voor babies) with template icon_bottle
+2025-09-15 22:58:39,935 [INFO] Generated 7134 (Douchegels voor baby's) with template icon_bathtub
+2025-09-15 22:58:39,936 [INFO] Generated 7130 (Massageoliën voor baby's) with template icon_bottle
+2025-09-15 22:58:39,936 [INFO] Generated 3907 (Babyhanddoeken) with template icon_blanket
+2025-09-15 22:58:39,937 [INFO] Generated 4350 (Babynagelschaartjes & -knippers) with template icon_scissors
+2025-09-15 22:58:39,937 [INFO] Generated 7124 (Babyverzorgingsproducten) with template icon_bottle
+2025-09-15 22:58:39,938 [INFO] Generated 2303 (Babyshampoos) with template icon_bottle
+2025-09-15 22:58:39,938 [INFO] Generated 7131 (Lotions voor babyhaar) with template icon_bottle
+2025-09-15 22:58:39,939 [INFO] Generated 5038 (Gezondheids- & verzorgingssets voor baby) with template icon_bottle
+2025-09-15 22:58:39,939 [INFO] Generated 7126 (Hulpmiddelen & accessoires voor het baden van baby's.) with template icon_bathtub
+2025-09-15 22:58:39,940 [INFO] Generated 4130 (Accessoires voor babybadje) with template icon_bathtub
+2025-09-15 22:58:39,941 [INFO] Generated 2497 (Baby badonderstellen) with template icon_bathtub
+2025-09-15 22:58:39,941 [INFO] Generated 2089 (Babybadjes) with template icon_bathtub
+2025-09-15 22:58:39,942 [INFO] Generated 2090 (Babybadzitjes) with template icon_bathtub
+2025-09-15 22:58:39,943 [INFO] Generated 7133 (Babyborstels & -kammen) with template icon_brush
+2025-09-15 22:58:39,943 [INFO] Generated 2298 (Badspeelgoed en stickers) with template icon_bathtub
+2025-09-15 22:58:39,944 [INFO] Generated 2101 (Badsponsjes voor baby's) with template icon_bathtub
+2025-09-15 22:58:39,944 [INFO] Generated 1944 (Badthermometers) with template icon_bathtub
+2025-09-15 22:58:39,945 [INFO] Generated 2087 (Kinderpotjes) with template icon_potty
+2025-09-15 22:58:39,945 [INFO] Generated 3661 (Neusaspirators voor baby's) with template icon_aspirator
+2025-09-15 22:58:39,946 [INFO] Generated 2185 (Toilettrainers) with template icon_potty
+2025-09-15 22:58:39,946 [INFO] Generated 4578 (Veranderende tafelkussens & -kleden) with template icon_pillow
+2025-09-15 22:58:39,947 [INFO] Generated 1981 (Reisproducten voor baby's) with template icon_travel_bag
+2025-09-15 22:58:39,948 [INFO] Generated 4716 (Autostoelverhogers) with template icon_car_seat
+2025-09-15 22:58:39,948 [INFO] Generated 9193 (Baby anti-verlatings apparaten) with template icon_alarm
+2025-09-15 22:58:39,949 [INFO] Generated 2786 (Baby autostoelaccessoires) with template icon_car_seat
+2025-09-15 22:58:39,949 [INFO] Generated 1982 (Baby-autozitjes) with template icon_car_seat
+2025-09-15 22:58:39,950 [INFO] Generated 5142 (Babydraagzakaccessoires) with template icon_carrier
+2025-09-15 22:58:39,950 [INFO] Generated 1984 (Babydragers) with template icon_baby_swaddle
+2025-09-15 22:58:39,951 [INFO] Generated 3663 (Babyreisbedjes) with template icon_travel_cot
+2025-09-15 22:58:39,952 [INFO] Generated 7403 (Kinderwagenplankjes) with template icon_stroller
+2025-09-15 22:58:39,952 [INFO] Generated 1983 (Kinderwagens) with template icon_stroller
+2025-09-15 22:58:39,953 [INFO] Generated 4364 (Kinderwagenveiligheid) with template icon_shield
+2025-09-15 22:58:39,953 [INFO] Generated 2083 (Kinderzitjeonderstellen) with template icon_car_seat
+2025-09-15 22:58:39,954 [INFO] Generated 2188 (Reiswiegen) with template icon_travel_cot
+2025-09-15 22:58:39,955 [INFO] Generated 6514 (Stoelbekledingen & trappelzakken voor baby's) with template icon_bumper
+2025-09-15 22:58:39,955 [INFO] Generated 2291 (Voetenzakken voor kinderwagens) with template icon_stroller
+2025-09-15 22:58:39,955 [INFO] Generated 6857 (Wielen voor kinderwagens) with template icon_wheel
+2025-09-15 22:58:39,956 [INFO] Generated 9256 (Zitjes voor kinderwagens) with template icon_stroller
+2025-09-15 22:58:39,956 [INFO] Generated 2103 (Slaapartikelen voor baby's) with template icon_baby_swaddle
+2025-09-15 22:58:39,957 [INFO] Generated 2398 (Baby beddengoed sets) with template icon_blanket
+2025-09-15 22:58:39,957 [INFO] Generated 2104 (Baby-cocoons) with template icon_wrap
+2025-09-15 22:58:39,958 [INFO] Generated 4976 (Babydekbedovertrekken) with template icon_blanket
+2025-09-15 22:58:39,958 [INFO] Generated 3833 (Babydekens) with template icon_blanket
+2025-09-15 22:58:39,959 [INFO] Generated 4770 (Babyknuffeldoekjes) with template icon_comfort_cloth
+2025-09-15 22:58:39,959 [INFO] Generated 4608 (Babykussens) with template icon_pillow
+2025-09-15 22:58:39,960 [INFO] Generated 3440 (Babymatrasbeschermers) with template icon_mattress
+2025-09-15 22:58:39,960 [INFO] Generated 3439 (Babymatrassen) with template icon_mattress
+2025-09-15 22:58:39,961 [INFO] Generated 2300 (Babynachtlampen) with template icon_night_light
+2025-09-15 22:58:39,961 [INFO] Generated 2187 (Babyslaaprollen) with template icon_sleep_roll
+2025-09-15 22:58:39,962 [INFO] Generated 4607 (Hoofdbeschermers & bekleding voor wieg) with template icon_bumper
+2025-09-15 22:58:39,962 [INFO] Generated 4609 (Ledikantlakens) with template icon_blanket
+2025-09-15 22:58:39,963 [INFO] Generated 5167 (Slaapzakken) with template icon_sleep_bag
+2025-09-15 22:58:39,963 [INFO] Generated 2399 (Wiegkussens) with template icon_pillow
+2025-09-15 22:58:39,963 [INFO] Generated 5056 (Wikkeldoeken) with template icon_wrap
+2025-09-15 22:58:39,964 [INFO] Generated 1987 (Veiligheidsproducten voor baby's) with template icon_shield
+2025-09-15 22:58:39,964 [INFO] Generated 4374 (Accessoires voor babyfoon met video) with template icon_monitor
+2025-09-15 22:58:39,965 [INFO] Generated 7302 (Accessoires voor babyfoons) with template icon_monitor
+2025-09-15 22:58:39,966 [INFO] Generated 4540 (Accessoires voor babytraphekje) with template icon_gate
+2025-09-15 22:58:39,966 [INFO] Generated 2416 (Afstandalarmen voor kinderen) with template icon_alarm
+2025-09-15 22:58:39,967 [INFO] Generated 2307 (Baby-videomonitoren) with template icon_monitor
+2025-09-15 22:58:39,967 [INFO] Generated 1403 (Babyfoons) with template icon_monitor
+2025-09-15 22:58:39,968 [INFO] Generated 3444 (Babyhoekbeschermers) with template icon_corner_guard
+2025-09-15 22:58:39,968 [INFO] Generated 3676 (Babyhoofdsteunen) with template icon_head_support
+2025-09-15 22:58:39,969 [INFO] Generated 4970 (Babyklamboes) with template icon_canopy
+2025-09-15 22:58:39,969 [INFO] Generated 3671 (Babyschaduwtenten) with template icon_canopy
+2025-09-15 22:58:39,970 [INFO] Generated 4126 (Babyveiligheidshelmen) with template icon_shield
+2025-09-15 22:58:39,970 [INFO] Generated 4361 (Babyzwembanden) with template icon_float_ring
+2025-09-15 22:58:39,971 [INFO] Generated 4360 (Babyzwembandensets) with template icon_float_ring
+2025-09-15 22:58:39,971 [INFO] Generated 5761 (Dopplers) with template icon_heartbeat
+2025-09-15 22:58:39,972 [INFO] Generated 2105 (Hekjes voor kinderbedden) with template icon_gate
+2025-09-15 22:58:39,972 [INFO] Generated 2100 (Kindersloten) with template icon_lock
+2025-09-15 22:58:39,973 [INFO] Generated 5220 (Sets voor kindveilig maken) with template icon_shield
+2025-09-15 22:58:39,973 [INFO] Generated 2082 (Traphekjes) with template icon_gate
+2025-09-15 22:58:39,974 [INFO] Generated 6518 (Veiligheidstuigjes & leibanden voor baby's) with template icon_shield
+2025-09-15 22:58:39,974 [INFO] Generated 6853 (Vingerbeschermers voor baby's) with template icon_corner_guard
+2025-09-15 22:58:39,975 [INFO] Generated 1986 (Voeden, verschonen & verzorgen) with template icon_generic
+2025-09-15 22:58:39,975 [INFO] Generated 8601 (Accessoires voor borstkolven) with template icon_container
+2025-09-15 22:58:39,976 [INFO] Generated 4670 (Accessoires voor luieremmer) with template icon_diaper
+2025-09-15 22:58:39,976 [INFO] Generated 5762 (Accessoires voor zuigflessen) with template icon_bottle
+2025-09-15 22:58:39,977 [INFO] Generated 4427 (Babycrèmes) with template icon_baby_swaddle
+2025-09-15 22:58:39,978 [INFO] Generated 2099 (Babydoekjes) with template icon_baby_swaddle
+2025-09-15 22:58:39,978 [INFO] Generated 4408 (Babydoekjes dispensers) with template icon_container
+2025-09-15 22:58:39,979 [INFO] Generated 2609 (Babyhuidverzorging) with template icon_bottle
+2025-09-15 22:58:39,979 [INFO] Generated 2305 (Babyoliën) with template icon_bottle
+2025-09-15 22:58:39,980 [INFO] Generated 2302 (Babypoeders) with template icon_container
+2025-09-15 22:58:39,980 [INFO] Generated 5012 (Babyspeenhoezen) with template icon_bib
+2025-09-15 22:58:39,981 [INFO] Generated 3921 (Babyspeenhouders) with template icon_bib
+2025-09-15 22:58:39,981 [INFO] Generated 4688 (Babyvoedingbereiders) with template icon_utensils
+2025-09-15 22:58:39,982 [INFO] Generated 4385 (Babyvoedingsbakjes) with template icon_utensils
+2025-09-15 22:58:39,982 [INFO] Generated 2299 (Babyweegschalen) with template icon_scale
+2025-09-15 22:58:39,983 [INFO] Generated 6874 (Beautycases voor baby's) with template icon_container
+2025-09-15 22:58:39,983 [INFO] Generated 4722 (Boerdoekjes) with template icon_generic
+2025-09-15 22:58:39,984 [INFO] Generated 1695 (Borstpompen) with template icon_container
+2025-09-15 22:58:39,984 [INFO] Generated 2600 (Borstvoedingaccessoires) with template icon_utensils
+2025-09-15 22:58:39,985 [INFO] Generated 2098 (Borstvoedingskussens) with template icon_pillow
+2025-09-15 22:58:39,985 [INFO] Generated 5464 (Drinkaccessoires voor peuters) with template icon_sippy_cup
+2025-09-15 22:58:39,986 [INFO] Generated 1655 (Flessensterilisatoren) with template icon_mixing_cup
+2025-09-15 22:58:39,986 [INFO] Generated 2092 (Flesspenen) with template icon_bottle
+2025-09-15 22:58:39,987 [INFO] Generated 1976 (Flesverwarmers) with template icon_bottle
+2025-09-15 22:58:39,987 [INFO] Generated 8902 (Fopspenen, bijtringen & pijnverlichtingsmiddelen bij doorkomende tandje) with template icon_pad
+2025-09-15 22:58:39,988 [INFO] Generated 1693 (Bijtringen) with template icon_pad
+2025-09-15 22:58:39,988 [INFO] Generated 1692 (Spenen) with template icon_generic
+2025-09-15 22:58:39,989 [INFO] Generated 2086 (Herbruikbare luiers) with template icon_diaper
+2025-09-15 22:58:39,989 [INFO] Generated 2301 (Luierafvalbakken) with template icon_diaper
+2025-09-15 22:58:39,990 [INFO] Generated 6087 (Luierbroekjes) with template icon_diaper
+2025-09-15 22:58:39,990 [INFO] Generated 5039 (Luierinlegdoekjes) with template icon_diaper
+2025-09-15 22:58:39,991 [INFO] Generated 7145 (Luierpinnen & sluitingen) with template icon_diaper
+2025-09-15 22:58:39,991 [INFO] Generated 2079 (Luiertassen) with template icon_diaper
+2025-09-15 22:58:39,992 [INFO] Generated 4383 (Melkpoederdispensers) with template icon_container
+2025-09-15 22:58:39,992 [INFO] Generated 2615 (Peuterbestek) with template icon_utensils
+2025-09-15 22:58:39,993 [INFO] Generated 5757 (Peuterservies) with template icon_plate
+2025-09-15 22:58:39,993 [INFO] Generated 1698 (Peutervoeding) with template icon_utensils
+2025-09-15 22:58:39,994 [INFO] Generated 3087 (Peutervoedingaccessoires) with template icon_utensils
+2025-09-15 22:58:39,994 [INFO] Generated 3085 (Peutervoedingsets) with template icon_utensils
+2025-09-15 22:58:39,995 [INFO] Generated 4382 (Sabbelzakjes) with template icon_sippy_cup
+2025-09-15 22:58:39,995 [INFO] Generated 8422 (Serviessets voor mensen met alzheimer) with template icon_plate
+2025-09-15 22:58:39,996 [INFO] Generated 3086 (Sippy bekers) with template icon_sippy_cup
+2025-09-15 22:58:39,996 [INFO] Generated 2088 (Slabbetjes) with template icon_bib
+2025-09-15 22:58:39,997 [INFO] Generated 5751 (Slopen voor borstvoedingskussens) with template icon_pillow
+2025-09-15 22:58:39,997 [INFO] Generated 2618 (Startsets babyvoeding) with template icon_utensils
+2025-09-15 22:58:39,998 [INFO] Generated 2617 (Sterilisatieaccessoires) with template icon_mixing_cup
+2025-09-15 22:58:39,998 [INFO] Generated 4347 (Verschoonkussenhoezen) with template icon_pillow
+2025-09-15 22:58:39,999 [INFO] Generated 2102 (Verschoonkussens) with template icon_pillow
+2025-09-15 22:58:39,999 [INFO] Generated 5991 (Wegwerpluiers) with template icon_diaper
+2025-09-15 22:58:40,000 [INFO] Generated 4133 (Zoogkompressen) with template icon_pad
+2025-09-15 22:58:40,000 [INFO] Generated 1425 (Zuigflessen) with template icon_bottle
+2025-09-15 22:58:40,001 [INFO] Generated 3654 (Zwangerschapsbanden) with template icon_pregnancy_belt
+2025-09-15 22:58:40,001 [INFO] Generated 5136 (Zwangerschapskussens) with template icon_pillow
+2025-09-15 22:58:40,002 [INFO] Generated 7393 (Zwemluiers) with template icon_float_ring
+2025-09-15 22:58:40,002 [INFO] Generated 4776 (Bouw & installatie) with template icon_hard_hat
+2025-09-15 22:58:40,003 [INFO] Generated 6649 ((Grond)verven & lakken) with template icon_paint_roller
+2025-09-15 22:58:40,003 [INFO] Generated 1483 (Acrielverf) with template icon_paint_roller
+2025-09-15 22:58:40,004 [INFO] Generated 5015 (Binnenlakken) with template icon_paint_roller
+2025-09-15 22:58:40,004 [INFO] Generated 4780 (Binnenverf) with template icon_paint_roller
+2025-09-15 22:58:40,005 [INFO] Generated 4997 (Grondverf) with template icon_paint_roller
+2025-09-15 22:58:40,006 [INFO] Generated 4852 (Hardhoutvernieuwers) with template icon_wood_grain
+2025-09-15 22:58:40,006 [INFO] Generated 6888 (Houtafwerkingsoliën) with template icon_bottle
+2025-09-15 22:58:40,007 [INFO] Generated 5425 (Houtafwerkingswassen) with template icon_wood_grain
+2025-09-15 22:58:40,007 [INFO] Generated 5752 (Houtbehandeling) with template icon_wood_grain
+2025-09-15 22:58:40,008 [INFO] Generated 7293 (Isoleerverven & afdichters voor oppervlakken) with template icon_paint_roller
+2025-09-15 22:58:40,008 [INFO] Generated 9235 (Lakken) with template icon_paint_roller
+2025-09-15 22:58:40,009 [INFO] Generated 5306 (Producten voor oppervlaktevoorbereiding) with template icon_paint_roller
+2025-09-15 22:58:40,009 [INFO] Generated 5317 (Doekjes voor oppervlaktevoorbereiding) with template icon_paint_roller
+2025-09-15 22:58:40,010 [INFO] Generated 5307 (Reinigingsmiddelen & ontvetters voor oppervlakvoorbereiding) with template icon_paint_roller
+2025-09-15 22:58:40,010 [INFO] Generated 5171 (Verfverdunners & -verwijderaars) with template icon_paint_roller
+2025-09-15 22:58:40,011 [INFO] Generated 6883 (Verf- & lakverdunners) with template icon_paint_roller
+2025-09-15 22:58:40,011 [INFO] Generated 5172 (Verf- & lakverwijderaars) with template icon_paint_roller
+2025-09-15 22:58:40,012 [INFO] Generated 5337 (Verwijderaars voor afdichtingsmiddel) with template icon_sealant_gun
+2025-09-15 22:58:40,012 [INFO] Generated 6650 (Specialistische verven) with template icon_generic
+2025-09-15 22:58:40,013 [INFO] Generated 1484 (Verf op waterbasis) with template icon_paint_roller
+2025-09-15 22:58:40,013 [INFO] Generated 7507 (Verfadditieven) with template icon_paint_roller
+2025-09-15 22:58:40,014 [INFO] Generated 4837 (Verfkleuren) with template icon_paint_roller
+2025-09-15 22:58:40,015 [INFO] Generated 6872 (Verftoevoegingen) with template icon_paint_roller
+2025-09-15 22:58:40,015 [INFO] Generated 6805 (Verfapplicators & schilderbenodigdheden) with template icon_paint_roller
+2025-09-15 22:58:40,016 [INFO] Generated 7591 (Airbrushes) with template icon_airbrush
+2025-09-15 22:58:40,016 [INFO] Generated 8378 (Kwast-/penseelkoppen) with template icon_paint_brush
+2025-09-15 22:58:40,017 [INFO] Generated 1162 (Penselen voor algemeen gebruik) with template icon_generic
+2025-09-15 22:58:40,017 [INFO] Generated 7867 (Verfemmerroosters) with template icon_paint_roller
+2025-09-15 22:58:40,018 [INFO] Generated 6878 (Verfmengbekers) with template icon_sippy_cup
+2025-09-15 22:58:40,018 [INFO] Generated 6980 (Verfrolbakken) with template icon_paint_roller
+2025-09-15 22:58:40,019 [INFO] Generated 4785 (Verfrollen) with template icon_paint_roller
+2025-09-15 22:58:40,019 [INFO] Generated 6539 (Verfrollergrepen) with template icon_paint_roller
+2025-09-15 22:58:40,020 [INFO] Generated 4783 (Verfrollers) with template icon_paint_roller
+2025-09-15 22:58:40,020 [INFO] Generated 6806 (Verfzeven) with template icon_paint_roller
+2025-09-15 22:58:40,021 [INFO] Generated 5426 (Verwijderaars voor afwerkingswas) with template icon_scraper
+2025-09-15 22:58:40,021 [INFO] Generated 5099 (Beton, cement & gips) with template icon_trowel_bag
+2025-09-15 22:58:40,022 [INFO] Generated 6658 (Cement) with template icon_trowel_bag
+2025-09-15 22:58:40,023 [INFO] Generated 5179 (Gipsen) with template icon_trowel_bag
+2025-09-15 22:58:40,023 [INFO] Generated 6776 (Ophoogzand) with template icon_shovel
+2025-09-15 22:58:40,024 [INFO] Generated 6779 (Opritten dichtingsmaterialen & reparatie) with template icon_road_patch
+2025-09-15 22:58:40,024 [INFO] Generated 5410 (Tegellijm & voegsel) with template icon_tile_trowel
+2025-09-15 22:58:40,025 [INFO] Generated 5100 (mortels) with template icon_trowel_bag
+2025-09-15 22:58:40,025 [INFO] Generated 5094 (Dakbedekkingen) with template icon_roof
+2025-09-15 22:58:40,026 [INFO] Generated 5289 (Afdichtingsprofielen) with template icon_sealant_gun
+2025-09-15 22:58:40,027 [INFO] Generated 6727 (Dakbedekkingen) with template icon_roof
+2025-09-15 22:58:40,027 [INFO] Generated 6722 (Dakbedekkingen) with template icon_roof
+2025-09-15 22:58:40,028 [INFO] Generated 6724 (Dakleien & -spanen) with template icon_roof
+2025-09-15 22:58:40,028 [INFO] Generated 6726 (Dakpannen) with template icon_roof
+2025-09-15 22:58:40,029 [INFO] Generated 5096 (Dakplaten) with template icon_plate
+2025-09-15 22:58:40,029 [INFO] Generated 6729 (Dakrandprofielen) with template icon_roof
+2025-09-15 22:58:40,030 [INFO] Generated 5276 (Onderdelen afvoer plat dak) with template icon_roof
+2025-09-15 22:58:40,031 [INFO] Generated 5239 (Regengootaccessoires) with template icon_generic
+2025-09-15 22:58:40,031 [INFO] Generated 5238 (Regengoten) with template icon_generic
+2025-09-15 22:58:40,032 [INFO] Generated 5236 (Regenpijpen) with template icon_generic
+2025-09-15 22:58:40,032 [WARNING] Row 6728 missing subject, using Catid
+2025-09-15 22:58:40,032 [INFO] Generated 6728 (6728) with template icon_generic
+2025-09-15 22:58:40,033 [INFO] Generated 4985 (Deuren & ramen) with template icon_generic
+2025-09-15 22:58:40,033 [INFO] Generated 6707 (Dakvensters & lichtkoepels) with template icon_roof
+2025-09-15 22:58:40,034 [INFO] Generated 6694 (Deuren) with template icon_generic
+2025-09-15 22:58:40,034 [INFO] Generated 4988 (Binnendeuren) with template icon_generic
+2025-09-15 22:58:40,035 [INFO] Generated 4987 (Buitendeuren) with template icon_generic
+2025-09-15 22:58:40,035 [INFO] Generated 4742 (Deurknoppen & -gereedschap) with template icon_generic
+2025-09-15 22:58:40,036 [INFO] Generated 5399 (Deurdrangers) with template icon_generic
+2025-09-15 22:58:40,037 [INFO] Generated 4745 (Deurhendelsets) with template icon_generic
+2025-09-15 22:58:40,037 [INFO] Generated 6837 (Deurkettingen) with template icon_generic
+2025-09-15 22:58:40,038 [INFO] Generated 6711 (Deurkloppers) with template icon_generic
+2025-09-15 22:58:40,038 [INFO] Generated 4744 (Deurkrukken) with template icon_generic
+2025-09-15 22:58:40,039 [INFO] Generated 9238 (Deuropeners) with template icon_generic
+2025-09-15 22:58:40,039 [INFO] Generated 3599 (Deurscharnieren) with template icon_generic
+2025-09-15 22:58:40,040 [INFO] Generated 6712 (Deurschopplaten) with template icon_plate
+2025-09-15 22:58:40,041 [INFO] Generated 4746 (Deursloten & veiligheidssloten) with template icon_shield
+2025-09-15 22:58:40,041 [INFO] Generated 6838 (Deurspionnen) with template icon_generic
+2025-09-15 22:58:40,042 [INFO] Generated 1916 (Deurstoppers) with template icon_generic
+2025-09-15 22:58:40,042 [INFO] Generated 5561 (Slotcilinders) with template icon_lock
+2025-09-15 22:58:40,043 [INFO] Generated 7508 (Sluitplaten) with template icon_plate
+2025-09-15 22:58:40,043 [INFO] Generated 7509 (Wapenschilden) with template icon_generic
+2025-09-15 22:58:40,044 [INFO] Generated 6977 (Deurkozijnen) with template icon_generic
+2025-09-15 22:58:40,044 [INFO] Generated 7513 (Poorten) with template icon_generic
+2025-09-15 22:58:40,045 [INFO] Generated 7088 (Accessoires & onderdelen voor parkeerafsluitingen) with template icon_safety_pin
+2025-09-15 22:58:40,045 [INFO] Generated 6708 (Deuren, deuropeners & onderdelen voor garages) with template icon_generic
+2025-09-15 22:58:40,046 [INFO] Generated 4089 (Accessoires voor garagedeuropener) with template icon_generic
+2025-09-15 22:58:40,046 [INFO] Generated 6709 (Garagedeuren) with template icon_generic
+2025-09-15 22:58:40,047 [INFO] Generated 3789 (Garagedeuropeners) with template icon_generic
+2025-09-15 22:58:40,048 [INFO] Generated 8115 (Hek-/poortopeners) with template icon_gate
+2025-09-15 22:58:40,048 [INFO] Generated 8130 (Onderdelen & accessoires voor automatische deur-/hekopeners) with template icon_gate
+2025-09-15 22:58:40,049 [INFO] Generated 8111 (Onderdelen & extra's voor schuifhekken) with template icon_gate
+2025-09-15 22:58:40,049 [INFO] Generated 7087 (Parkeerafsluitingen) with template icon_safety_pin
+2025-09-15 22:58:40,050 [INFO] Generated 7514 (Poorten voor woningen) with template icon_generic
+2025-09-15 22:58:40,050 [INFO] Generated 8110 (Schuifhekken) with template icon_gate
+2025-09-15 22:58:40,051 [INFO] Generated 6715 (Glasplaten) with template icon_plate
+2025-09-15 22:58:40,051 [INFO] Generated 6702 (Vensterhulpmiddelen en accessoires) with template icon_generic
+2025-09-15 22:58:40,052 [INFO] Generated 6704 (Horren) with template icon_generic
+2025-09-15 22:58:40,052 [INFO] Generated 6705 (Onderdelen voor raamreparatie) with template icon_generic
+2025-09-15 22:58:40,053 [INFO] Generated 4452 (Raamfolies) with template icon_bottle
+2025-09-15 22:58:40,054 [INFO] Generated 6703 (Raamgrepen & -sluitingen) with template icon_safety_pin
