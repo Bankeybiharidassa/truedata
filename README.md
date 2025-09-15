@@ -73,7 +73,7 @@ Catid, Root category, Sub category, Sub-sub category, Sub-sub-sub category, Sub-
   Catid, title_selected, concept_notes, primitives_used, path_hash, width, height, stroke_width, color_hex, validation_passed, source_icon
   ```
 
-- Package results as a **ZIP**: all SVGs + `manifest.csv`.
+- Place results in an `output` directory containing all SVGs and `manifest.csv` (no ZIP).
 
 ---
 

@@ -83,7 +83,7 @@ Je negeert alles dat buiten het hier gedefinieerde IO-contract valt.
 
     `Catid, title_selected, concept_notes, primitives_used, path_hash, width, height, stroke_width, color_hex, validation_passed, source_icon`.  
 
-- **Packaging:** 1 CSV met alle SVG’s + manifest in folder "output"
+- **Packaging:** Verzameling in map "output" met alle SVG's en manifest (geen ZIP)
  
 ---
  
@@ -113,9 +113,9 @@ Je negeert alles dat buiten het hier gedefinieerde IO-contract valt.
  
 # Output
 
-- Per CSV: een **zip** met alle `{Catid}.svg` + `manifest.csv`.  
+- Per CSV: een map `output` met alle `{Catid}.svg` + `manifest.csv`.
 
-- Geen extra tekst, geen JSON.  
+- Geen extra tekst, geen JSON.
  
 ---
  

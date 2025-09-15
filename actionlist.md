@@ -10,8 +10,9 @@
 - `primitives_used` is a comma-separated list of SVG primitives present in the final icon (`path`, `circle`, `rect`, `line`, `polyline`, `polygon`).
 - `path_hash` is the SHA-256 hash of the concatenated `d` attributes from all paths in the SVG.
 - When generating custom icons, ensure they communicate meaning with simple, recognizable shapes, using 2–6 primitives and the specified stroke style.
-- GitHub accepts `.svg` files but blocks files larger than 100 MiB; keep ZIP artifacts under this limit or plan for external storage if larger.
+- Output files are stored directly in an `output` directory; no ZIP packaging is required.
+- GitHub accepts `.svg` files but blocks files larger than 100 MiB; ensure individual files stay below this limit.
 - For web research, retrieve pages using `curl` with the `https://r.jina.ai/` prefix (or text-based tools like `lynx`) to access clean text for citation.
 
 ## Items Needing Clarification
-- Confirm whether a Google Drive or other external storage interface is required when ZIP packages approach GitHub's 100 MiB file limit.
+- Confirm whether an external storage solution (e.g., Google Drive) is required if repository artifacts approach GitHub's 100 MiB file limit.
