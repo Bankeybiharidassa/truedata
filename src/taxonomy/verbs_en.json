@@ -1,5 +1,16 @@
 {
   "drill": {"lemma": "drill", "nouns": ["drill", "drilling machine", "power drill", "screwdriver"], "synonyms": ["bore", "hole", "driver"]},
   "screw": {"lemma": "screw", "nouns": ["screw", "bolt", "fastener"], "synonyms": ["bolt", "fasten"]},
-  "cut": {"lemma": "cut", "nouns": ["cutter", "knife", "scissors"], "synonyms": ["trim", "slice"]}
+  "cut": {"lemma": "cut", "nouns": ["cutter", "knife", "scissors"], "synonyms": ["trim", "slice"]},
+  "saw": {"lemma": "saw", "nouns": ["saw", "handsaw", "jigsaw"], "synonyms": ["saw", "cut"]},
+  "sand": {"lemma": "sand", "nouns": ["sander", "sandpaper"], "synonyms": ["smooth", "polish"]},
+  "paint": {"lemma": "paint", "nouns": ["paint", "brush", "roller"], "synonyms": ["coat", "color"]},
+  "measure": {"lemma": "measure", "nouns": ["measuring tape", "caliper", "ruler"], "synonyms": ["gauge", "meter"]},
+  "weld": {"lemma": "weld", "nouns": ["welder", "welding machine"], "synonyms": ["fuse", "join"]},
+  "grind": {"lemma": "grind", "nouns": ["grinder", "angle grinder"], "synonyms": ["sharpen", "abrade"]},
+  "polish": {"lemma": "polish", "nouns": ["polisher", "buffer"], "synonyms": ["shine", "buff"]},
+  "clean": {"lemma": "clean", "nouns": ["cleaner", "vacuum", "detergent"], "synonyms": ["wash", "sanitize"]},
+  "charge": {"lemma": "charge", "nouns": ["charger", "charging station"], "synonyms": ["power", "recharge"]},
+  "mix": {"lemma": "mix", "nouns": ["mixer", "blender"], "synonyms": ["blend", "combine"]},
+  "lift": {"lemma": "lift", "nouns": ["lift", "jack", "hoist"], "synonyms": ["raise", "elevate"]}
 }
