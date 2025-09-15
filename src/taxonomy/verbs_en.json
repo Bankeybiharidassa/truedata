@@ -1,0 +1,5 @@
+{
+  "drill": {"lemma": "drill", "nouns": ["drill", "drilling machine", "power drill", "screwdriver"], "synonyms": ["bore", "hole", "driver"]},
+  "screw": {"lemma": "screw", "nouns": ["screw", "bolt", "fastener"], "synonyms": ["bolt", "fasten"]},
+  "cut": {"lemma": "cut", "nouns": ["cutter", "knife", "scissors"], "synonyms": ["trim", "slice"]}
+}
