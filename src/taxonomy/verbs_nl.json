@@ -1,6 +1,6 @@
 {
   "boren": {"lemma": "boren", "nouns": ["boor", "kolomboor", "accuboormachine"], "synonyms": ["gat", "boring"]},
-  "schroeven": {"lemma": "schroeven", "nouns": ["schroef", "bout", "bevestiger"], "synonyms": ["vastzetten", "aandraaien"]},
+  "schroeven": {"lemma": "schroeven", "nouns": ["schroef", "bout", "bevestiger"], "synonyms": ["vastzetten"]},
   "snijden": {"lemma": "snijden", "nouns": ["mes", "snijder", "schaar"], "synonyms": ["afsnijden", "trimmen"]},
   "zagen": {"lemma": "zagen", "nouns": ["zaag", "handzaag", "decoupeerzaag"], "synonyms": ["afzagen", "snijden"]},
   "schuren": {"lemma": "schuren", "nouns": ["schuurmachine", "schuurpapier"], "synonyms": ["gladmaken", "polijsten"]},
@@ -12,5 +12,27 @@
   "reinigen": {"lemma": "reinigen", "nouns": ["reiniger", "stofzuiger", "detergent"], "synonyms": ["schoonmaken", "wassen"]},
   "opladen": {"lemma": "opladen", "nouns": ["oplader", "laadstation"], "synonyms": ["laden", "opwekken"]},
   "mengen": {"lemma": "mengen", "nouns": ["mixer", "blender"], "synonyms": ["mixen", "combineren"]},
-  "heffen": {"lemma": "heffen", "nouns": ["hef", "krik", "takel"], "synonyms": ["liften", "opheffen"]}
-}
+  "heffen": {"lemma": "heffen", "nouns": ["hef", "krik", "takel"], "synonyms": ["liften", "opheffen"]},
+  "brouwen": {"lemma": "brouwen", "nouns": ["brouwer", "brouwerij", "brouwsel"], "synonyms": ["fermenteren", "maken"]},
+  "kamperen": {"lemma": "kamperen", "nouns": ["camping", "tent"], "synonyms": ["overnachten", "kampen"]},
+  "lijmen": {"lemma": "lijmen", "nouns": ["lijm", "kleefstof"], "synonyms": ["plakken", "hechten"]},
+  "maken": {"lemma": "maken", "nouns": ["maker", "fabricage"], "synonyms": ["creëren", "bouwen"]},
+  "roken": {"lemma": "roken", "nouns": ["roker", "rookoven"], "synonyms": ["smoren", "dampen"]},
+  "solderen": {"lemma": "solderen", "nouns": ["soldeer", "soldeerbout"], "synonyms": ["lassen", "verbinden"]},
+  "sporten": {"lemma": "sporten", "nouns": ["sport", "workout"], "synonyms": ["trainen", "bewegen"]},
+  "verzorgen": {"lemma": "verzorgen", "nouns": ["verzorging", "verzorger"], "synonyms": ["verplegen", "oppassen"]},
+  "drogen": {"lemma": "drogen", "nouns": ["droger", "dehydrator"], "synonyms": ["afdrogen", "uitdrogen"]},
+  "bakken": {"lemma": "bakken", "nouns": ["bakker", "oven"], "synonyms": ["braden", "koken"]},
+  "bellen": {"lemma": "bellen", "nouns": ["telefoon", "bel"], "synonyms": ["opbellen", "ringen"]},
+  "binden": {"lemma": "binden", "nouns": ["binder", "binding"], "synonyms": ["vastmaken", "knoop" ]},
+  "breien": {"lemma": "breien", "nouns": ["breinaald", "breisel"], "synonyms": ["steken", "haken"]},
+  "breken": {"lemma": "breken", "nouns": ["breker", "breuk"], "synonyms": ["vernietigen", "splijten"]},
+  "buigen": {"lemma": "buigen", "nouns": ["buigmachine", "buiging"], "synonyms": ["krommen", "vouwen"]},
+  "tekenen": {"lemma": "tekenen", "nouns": ["tekening", "potlood"], "synonyms": ["schetsen", "afbeelden"]},
+  "werken": {"lemma": "werken", "nouns": ["werk", "arbeider"], "synonyms": ["arbeiden", "functioneren"]},
+  "rijden": {"lemma": "rijden", "nouns": ["auto", "chauffeur"], "synonyms": ["besturen", "sturen"]},
+  "schieten": {"lemma": "schieten", "nouns": ["schutter", "geweer"], "synonyms": ["vuren", "afschieten"]},
+  "beschermen": {"lemma": "beschermen", "nouns": ["beschermer", "bescherming"], "synonyms": ["beveiligen", "afschermen"]},
+  "bouwen": {"lemma": "bouwen", "nouns": ["bouwer", "constructie"], "synonyms": ["opbouwen", "constructeren"]},
+  "installeren": {"lemma": "installeren", "nouns": ["installateur", "installatie"], "synonyms": ["plaatsen", "monteren"]}
+  }
