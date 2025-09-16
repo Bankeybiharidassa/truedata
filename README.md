@@ -112,10 +112,17 @@ Icons are created with a transparent background. To apply or remove a solid back
 ## Test Run and Style Variants
 
 Use `scripts/generate_icons.py` to create sample icons for evaluation using the
-[svgapi.com](https://svgapi.com) catalogue. By default the script now renders
-five variants per category: a raw download (`original`) saved as `test-*.svg`
-for operator checks, plus four styled exports (`brand`, `thin`, `thick`,
-`mono`). Provide `--styles` with a comma-separated list to customise the set.
+[svgapi.com](https://svgapi.com) catalogue. The `--csv` argument accepts either
+CSV files or the raw Excel export (`.xlsx`). By default the script renders five
+variants per category: a raw download (`original`) saved as `test-*.svg` for
+operator checks, plus four styled exports (`brand`, `thin`, `thick`, `mono`).
+Each icon is downloaded once and then restyled locally for all requested
+variants, so requesting the full set does not multiply API traffic. Provide
+`--styles` with a comma-separated list to customise the set.
+
+When a long-running export is interrupted, rerun the command with `--resume`
+to skip categories whose SVG files and manifest rows already exist for the
+requested style variants.
 
 ```
 python scripts/generate_icons.py --csv categories_sample.csv --out output/test

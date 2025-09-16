@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """Download and restyle SVG icons for e-commerce categories.
 
-The script reads a CSV file describing category taxonomy rows and downloads an
-SVG for each row using the svgapi.com JSON API. Icons can be exported in
-multiple style variants and are written to ``<output>/<style>/<category>/<Catid>.svg``
-alongside a ``manifest.csv`` with metadata useful for validation. A raw variant
-is provided so operators can review the untouched download from the catalogue;
-those files are prefixed with ``test-``.
+The script reads a taxonomy spreadsheet (CSV or XLSX) describing category rows
+and downloads an SVG for each row using the svgapi.com JSON API. Icons can be
+exported in multiple style variants and are written to
+``<output>/<style>/<category>/<Catid>.svg`` alongside a ``manifest.csv`` with
+metadata useful for validation. A raw variant is provided so operators can
+review the untouched download from the catalogue; those files are prefixed with
+``test-``.
 
 The selected icon for a category is deterministic: a SHA256 hash of ``Catid``
 is used to pick one item from the API search results.
@@ -20,7 +21,7 @@ import os
 import re
 import sys
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Optional, Tuple
+from typing import Any, Dict, Iterable, List, Optional, Set, Tuple
 
 import requests
 import xml.etree.ElementTree as ET
@@ -143,6 +144,122 @@ def iter_search_queries(category: str) -> List[str]:
         if term not in queries:
             queries.append(term)
     return queries
+
+
+def load_taxonomy_rows(path: Path) -> List[Dict[str, str]]:
+    """Return taxonomy rows from ``path`` supporting CSV and XLSX files."""
+
+    suffix = path.suffix.lower()
+    if suffix == ".xlsx":
+        try:
+            from openpyxl import load_workbook
+        except ImportError as exc:  # pragma: no cover - import guard
+            raise SystemExit(
+                "Reading .xlsx files requires openpyxl. Install it with 'pip install openpyxl'."
+            ) from exc
+
+        workbook = load_workbook(path, read_only=True, data_only=True)
+        worksheet = workbook.active
+        rows: List[Dict[str, str]] = []
+        header_row = next(worksheet.iter_rows(values_only=True), None)
+        if not header_row:
+            workbook.close()
+            return rows
+
+        headers: List[str] = []
+        for idx, cell in enumerate(header_row):
+            header = str(cell).strip() if cell is not None else ""
+            if not header:
+                header = f"column_{idx}"
+            headers.append(header)
+
+        for excel_row in worksheet.iter_rows(min_row=2, values_only=True):
+            if excel_row is None:
+                continue
+            if all(cell is None for cell in excel_row):
+                continue
+            row_dict: Dict[str, str] = {}
+            for idx, header in enumerate(headers):
+                if not header:
+                    continue
+                value = excel_row[idx] if idx < len(excel_row) else None
+                if value is None:
+                    row_dict[header] = ""
+                else:
+                    row_dict[header] = str(value).strip()
+            rows.append(row_dict)
+
+        workbook.close()
+        return rows
+
+    with path.open(newline="", encoding="utf-8") as handle:
+        reader = csv.DictReader(handle)
+        return list(reader)
+
+
+def load_existing_manifest(path: Path) -> Tuple[List[Dict[str, str]], Dict[str, int], Set[str]]:
+    """Return existing manifest rows, an index by ``Catid`` and completed IDs."""
+
+    entries: List[Dict[str, str]] = []
+    index: Dict[str, int] = {}
+    completed: Set[str] = set()
+    if not path.exists():
+        return entries, index, completed
+
+    with path.open(newline="", encoding="utf-8") as handle:
+        reader = csv.DictReader(handle)
+        for row in reader:
+            catid = (row.get("Catid") or "").strip()
+            if catid and catid in index:
+                entries[index[catid]] = row
+            else:
+                if catid:
+                    index[catid] = len(entries)
+                entries.append(row)
+
+    for catid, idx in index.items():
+        record = entries[idx]
+        if (record.get("validation_passed") or "").strip().upper() == "TRUE":
+            completed.add(catid)
+
+    logging.info("Loaded %d existing manifest rows from %s", len(entries), path)
+    return entries, index, completed
+
+
+def record_manifest_entry(info: Dict[str, Any], entry: Dict[str, Any]) -> None:
+    """Upsert ``entry`` into the manifest bookkeeping for a style."""
+
+    catid = (entry.get("Catid") or "").strip()
+    manifest: List[Dict[str, Any]] = info["manifest"]
+    manifest_index: Dict[str, int] = info["manifest_index"]
+
+    if catid and catid in manifest_index:
+        manifest[manifest_index[catid]] = entry
+    else:
+        if catid:
+            manifest_index[catid] = len(manifest)
+        manifest.append(entry)
+
+    validation = (entry.get("validation_passed") or "").strip().upper()
+    completed: Set[str] = info["completed_catids"]
+    if catid:
+        if validation == "TRUE":
+            completed.add(catid)
+        else:
+            completed.discard(catid)
+
+
+def row_outputs_complete(catid: str, category_slug: str, styles: Dict[str, Dict[str, Any]]) -> bool:
+    """Return ``True`` when every requested style already produced ``catid``."""
+
+    for info in styles.values():
+        file_prefix: str = info["file_prefix"]
+        file_path = info["dir"] / category_slug / f"{file_prefix}{catid}.svg"
+        if not file_path.exists():
+            return False
+        if catid not in info["completed_catids"]:
+            return False
+    return True
 
 
 def parse_dimension(value: Optional[str]) -> float:
@@ -327,7 +444,11 @@ def restyle_svg(svg_data: str, params: dict) -> Tuple[str, List[str], str, int, 
 
 def main():
     parser = argparse.ArgumentParser(description="Download SVG icons with style variants")
-    parser.add_argument("--csv", default="categories_sample.csv", help="Input CSV file")
+    parser.add_argument(
+        "--csv",
+        default="categories_sample.csv",
+        help="Input taxonomy file (CSV or XLSX)",
+    )
     parser.add_argument("--out", default="output/test2", help="Output directory root")
     parser.add_argument(
         "--styles",
@@ -350,14 +471,19 @@ def main():
         default=os.environ.get("ICON_LOG_LEVEL", "INFO"),
         help="Logging level (DEBUG, INFO, WARNING, ERROR)",
     )
+    parser.add_argument(
+        "--resume",
+        action="store_true",
+        help="Skip categories whose manifest entries and SVG files already exist",
+    )
     args = parser.parse_args()
 
+    input_path = Path(args.csv)
     out_root = Path(args.out)
     log_path = configure_logging(out_root, args.log_level)
 
-    logging.info("Reading categories from %s", args.csv)
-    with open(args.csv, newline='', encoding='utf-8') as f:
-        rows = list(csv.DictReader(f))
+    logging.info("Reading categories from %s", input_path)
+    rows = load_taxonomy_rows(input_path)
 
     requested_styles: Iterable[str] = [s.strip() for s in args.styles.split(',') if s.strip()]
     styles: Dict[str, Dict[str, Any]] = {}
@@ -374,98 +500,143 @@ def main():
     logging.info("Writing logs to %s", log_path)
     logging.info("Generating icons for %d categories (%s)", len(rows), ", ".join(styles))
 
+    style_state: Dict[str, Dict[str, Any]] = {}
     for style_name, params in styles.items():
-        style_color = params.get('stroke_color')
-        style_stroke_width = params.get('stroke_width')
         style_dir = out_root / style_name
         style_dir.mkdir(parents=True, exist_ok=True)
-        manifest_rows = []
-        file_prefix = params.get("file_prefix", "")
-        for row in rows:
-            catid = row['Catid']
-            category_name = deepest_category(row) or row['Root category'] or 'Unknown'
-            category_slug = slugify(category_name)
-            logging.debug("Processing %s (%s) for style %s", catid, category_name, style_name)
-            svg_raw, source_url, icon_title = fetch_icon_svg(
-                category_name,
-                catid,
-                session,
-                args.api_key,
-                args.search_limit,
-            )
-            if not svg_raw:
-                manifest_rows.append({
-                    'Catid': catid,
-                    'category': category_slug,
-                    'title_selected': category_name,
-                    'concept_notes': 'no public icon found',
-                    'primitives_used': '',
-                    'path_hash': '',
-                    'width': 0,
-                    'height': 0,
-                    'stroke_width': style_stroke_width if style_stroke_width is not None else '',
-                    'color_hex': style_color or '',
-                    'validation_passed': 'FALSE',
-                    'source_icon': '',
-                })
-                continue
+        manifest_path = style_dir / "manifest.csv"
+        if args.resume:
+            manifest_rows, manifest_index, completed_catids = load_existing_manifest(manifest_path)
+        else:
+            manifest_rows, manifest_index, completed_catids = [], {}, set()
+        style_state[style_name] = {
+            "params": params,
+            "dir": style_dir,
+            "manifest": manifest_rows,
+            "manifest_index": manifest_index,
+            "completed_catids": completed_catids,
+            "file_prefix": params.get("file_prefix", ""),
+            "color": params.get("stroke_color") or "",
+            "stroke_width": params.get("stroke_width") if params.get("stroke_width") is not None else "",
+            "manifest_path": manifest_path,
+        }
 
-            try:
-                svg_content, primitives, path_hash, width_out, height_out = restyle_svg(
-                    svg_raw, params
+    for row in rows:
+        catid_value = row.get('Catid', '')
+        catid = str(catid_value).strip()
+        if not catid:
+            logging.warning("Skipping row without Catid: %s", row)
+            continue
+
+        category_name = deepest_category(row) or row.get('Root category') or 'Unknown'
+        category_name = category_name.strip() if isinstance(category_name, str) else str(category_name)
+        category_slug = slugify(category_name)
+        logging.debug("Processing %s (%s)", catid, category_name)
+
+        if args.resume and row_outputs_complete(catid, category_slug, style_state):
+            logging.info("Skipping %s (%s) -- already complete", catid, category_name)
+            continue
+
+        svg_raw, source_url, icon_title = fetch_icon_svg(
+            category_name,
+            catid,
+            session,
+            args.api_key,
+            args.search_limit,
+        )
+
+        if not svg_raw:
+            for info in style_state.values():
+                record_manifest_entry(
+                    info,
+                    {
+                        'Catid': catid,
+                        'category': category_slug,
+                        'title_selected': category_name,
+                        'concept_notes': 'no public icon found',
+                        'primitives_used': '',
+                        'path_hash': '',
+                        'width': 0,
+                        'height': 0,
+                        'stroke_width': info['stroke_width'],
+                        'color_hex': info['color'],
+                        'validation_passed': 'FALSE',
+                        'source_icon': '',
+                    },
                 )
-            except ET.ParseError as exc:
-                logging.warning("Failed to parse SVG for %s (%s): %s", catid, source_url, exc)
-                manifest_rows.append({
-                    'Catid': catid,
-                    'category': category_slug,
-                    'title_selected': category_name,
-                    'concept_notes': 'svg parsing failed',
-                    'primitives_used': '',
-                    'path_hash': '',
-                    'width': 0,
-                    'height': 0,
-                    'stroke_width': style_stroke_width if style_stroke_width is not None else '',
-                    'color_hex': style_color or '',
-                    'validation_passed': 'FALSE',
-                    'source_icon': source_url,
-                })
-                continue
+            continue
 
+        try:
+            restyled: Dict[str, Tuple[str, List[str], str, int, int]] = {}
+            for style_name, info in style_state.items():
+                params = info['params']
+                restyled[style_name] = restyle_svg(svg_raw, params)
+        except ET.ParseError as exc:
+            logging.warning("Failed to parse SVG for %s (%s): %s", catid, source_url, exc)
+            for info in style_state.values():
+                record_manifest_entry(
+                    info,
+                    {
+                        'Catid': catid,
+                        'category': category_slug,
+                        'title_selected': category_name,
+                        'concept_notes': 'svg parsing failed',
+                        'primitives_used': '',
+                        'path_hash': '',
+                        'width': 0,
+                        'height': 0,
+                        'stroke_width': info['stroke_width'],
+                        'color_hex': info['color'],
+                        'validation_passed': 'FALSE',
+                        'source_icon': source_url,
+                    },
+                )
+            continue
+
+        for style_name, info in style_state.items():
+            svg_content, primitives, path_hash, width_out, height_out = restyled[style_name]
+            style_dir: Path = info['dir']
             cat_dir = style_dir / category_slug
             cat_dir.mkdir(parents=True, exist_ok=True)
+            file_prefix = info['file_prefix']
             file_path = cat_dir / f"{file_prefix}{catid}.svg"
             with open(file_path, 'w', encoding='utf-8') as sf:
                 sf.write(svg_content)
 
             concept = f"downloaded from svgapi ({icon_title})"
-            if params.get("raw_output"):
+            if info['params'].get('raw_output'):
                 concept += " [raw]"
-            manifest_rows.append({
-                'Catid': catid,
-                'category': category_slug,
-                'title_selected': category_name,
-                'concept_notes': concept,
-                'primitives_used': ','.join(primitives),
-                'path_hash': path_hash,
-                'width': width_out,
-                'height': height_out,
-                'stroke_width': style_stroke_width if style_stroke_width is not None else '',
-                'color_hex': style_color or '',
-                'validation_passed': 'TRUE',
-                'source_icon': source_url,
-            })
+            record_manifest_entry(
+                info,
+                {
+                    'Catid': catid,
+                    'category': category_slug,
+                    'title_selected': category_name,
+                    'concept_notes': concept,
+                    'primitives_used': ','.join(primitives),
+                    'path_hash': path_hash,
+                    'width': width_out,
+                    'height': height_out,
+                    'stroke_width': info['stroke_width'],
+                    'color_hex': info['color'],
+                    'validation_passed': 'TRUE',
+                    'source_icon': source_url,
+                },
+            )
 
-        manifest_path = style_dir / 'manifest.csv'
-        fieldnames = [
-            'Catid', 'category', 'title_selected', 'concept_notes', 'primitives_used',
-            'path_hash', 'width', 'height', 'stroke_width', 'color_hex',
-            'validation_passed', 'source_icon'
-        ]
+    fieldnames = [
+        'Catid', 'category', 'title_selected', 'concept_notes', 'primitives_used',
+        'path_hash', 'width', 'height', 'stroke_width', 'color_hex',
+        'validation_passed', 'source_icon'
+    ]
+
+    for style_name, info in style_state.items():
+        manifest_path: Path = info['manifest_path']
         with open(manifest_path, 'w', newline='', encoding='utf-8') as mf:
             writer = csv.DictWriter(mf, fieldnames=fieldnames)
             writer.writeheader()
-            writer.writerows(manifest_rows)
+            for row in info['manifest']:
+                writer.writerow({key: row.get(key, "") for key in fieldnames})
         logging.info("Wrote %s", manifest_path)
 
 
